@@ -1,0 +1,126 @@
+name: Backend CI
+
+# Automated build and test for the Techies Health Tracker REST API.
+#
+# Required by the Part 2 brief: "Configure automated testing and continuous integration using
+# GitHub Actions. Your workflow must trigger automated builds and execute your unit tests on
+# every push to verify your codebase functions outside of your local environment."
+#
+# The Android workflow is a separate file, so a failure on one side of the project reports
+# clearly against that side rather than turning the whole pipeline red.
+
+on:
+  push:
+    branches: [ main, develop, 'feature/**' ]
+  pull_request:
+    branches: [ main, develop ]
+
+  # Lets the workflow be triggered by hand from the Actions tab, which is useful when
+  # demonstrating the pipeline during the video walkthrough.
+  workflow_dispatch:
+
+env:
+  DOTNET_VERSION: '8.0.x'
+  SOLUTION_PATH: 'TechiesHealthTracker.sln'
+
+  # Skips the first-run banner and telemetry ping, which otherwise add noise to every log.
+  DOTNET_NOLOGO: true
+  DOTNET_CLI_TELEMETRY_OPTOUT: true
+  DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
+
+jobs:
+  build-and-test:
+    name: Build and test the API
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v4
+
+      - name: Set up the .NET SDK
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: ${{ env.DOTNET_VERSION }}
+
+      # Caching NuGet packages between runs takes a clean build from roughly a minute to a few
+      # seconds. The key is the hash of the project files, so it invalidates itself whenever a
+      # package reference changes.
+      - name: Cache NuGet packages
+        uses: actions/cache@v4
+        with:
+          path: ~/.nuget/packages
+          key: ${{ runner.os }}-nuget-${{ hashFiles('**/*.csproj') }}
+          restore-keys: ${{ runner.os }}-nuget-
+
+      - name: Restore dependencies
+        run: dotnet restore ${{ env.SOLUTION_PATH }}
+
+      # The API project builds with TreatWarningsAsErrors, so this step fails on anything the
+      # compiler flags rather than letting warnings accumulate unnoticed.
+      - name: Build
+        run: dotnet build ${{ env.SOLUTION_PATH }} --configuration Release --no-restore
+
+      # The test suite runs entirely against an in-memory database, so no PostgreSQL service
+      # container is needed and the job stays fast and deterministic.
+      - name: Run tests
+        run: >
+          dotnet test ${{ env.SOLUTION_PATH }}
+          --configuration Release
+          --no-build
+          --verbosity normal
+          --logger "trx;LogFileName=test-results.trx"
+          --collect:"XPlat Code Coverage"
+          --results-directory ./TestResults
+
+      # Uploaded even when the tests fail, because a failed run is exactly when the detail is
+      # worth having.
+      - name: Upload test results
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: test-results
+          path: ./TestResults
+          retention-days: 14
+
+      - name: Summarise the run
+        if: always()
+        run: |
+          echo "### Backend CI" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "| Step | Result |" >> $GITHUB_STEP_SUMMARY
+          echo "| --- | --- |" >> $GITHUB_STEP_SUMMARY
+          echo "| Build | ${{ job.status }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Commit | \`${{ github.sha }}\` |" >> $GITHUB_STEP_SUMMARY
+
+  publish:
+    name: Publish a deployable build
+    runs-on: ubuntu-latest
+
+    # Only runs once the tests have passed, and only on the main branch: there is no sense
+    # producing a deployment artefact from a build that does not work.
+    needs: build-and-test
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v4
+
+      - name: Set up the .NET SDK
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: ${{ env.DOTNET_VERSION }}
+
+      - name: Publish the API
+        run: >
+          dotnet publish src/TechiesHealthTracker.Api/TechiesHealthTracker.Api.csproj
+          --configuration Release
+          --output ./publish
+
+      # This artefact is what gets deployed to Azure App Service. Wiring the deployment itself up
+      # needs a publish profile in the repository secrets, which is a POE-phase step.
+      - name: Upload the published output
+        uses: actions/upload-artifact@v4
+        with:
+          name: api-publish
+          path: ./publish
+          retention-days: 14

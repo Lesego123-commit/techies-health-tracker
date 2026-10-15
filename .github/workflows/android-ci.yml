@@ -1,0 +1,167 @@
+name: Android CI
+
+# Automated build and test for the Techies Health Tracker Android client.
+#
+# Required by the Part 2 brief: the workflow must trigger automated builds and execute unit tests
+# on every push, verifying the codebase compiles outside anyone's local environment.
+#
+# The backend has its own workflow, so a failure reports clearly against the side that broke
+# rather than turning the whole pipeline red.
+
+on:
+  push:
+    branches: [ main, develop, 'feature/**' ]
+    paths:
+      - 'android/**'
+      - '.github/workflows/android-ci.yml'
+  pull_request:
+    branches: [ main, develop ]
+    paths:
+      - 'android/**'
+      - '.github/workflows/android-ci.yml'
+  workflow_dispatch:
+
+# A new push to the same branch cancels the run already in flight. Android builds are slow, and
+# there is no value in finishing a build for a commit that has already been superseded.
+concurrency:
+  group: android-${{ github.ref }}
+  cancel-in-progress: true
+
+defaults:
+  run:
+    working-directory: android
+
+jobs:
+  build-and-test:
+    name: Build and test the app
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v4
+
+      # JDK 17 matches the jvmTarget the app compiles against.
+      - name: Set up the JDK
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Set up Gradle
+        uses: gradle/actions/setup-gradle@v4
+        with:
+          cache-read-only: ${{ github.ref != 'refs/heads/main' }}
+
+      - name: Make gradlew executable
+        run: chmod +x ./gradlew
+
+      # google-services.json is never committed: it is generated per Firebase project and should
+      # not sit in a public repository. The build applies the Google Services plugin only when the
+      # file is present, so CI compiles without it — Firebase is exercised on a real device
+      # instead. To build a Firebase-enabled artefact here, add the file's base64 contents as the
+      # GOOGLE_SERVICES_JSON repository secret and this step writes it out.
+      - name: Restore google-services.json if configured
+        env:
+          GOOGLE_SERVICES_JSON: ${{ secrets.GOOGLE_SERVICES_JSON }}
+        run: |
+          if [ -n "$GOOGLE_SERVICES_JSON" ]; then
+            echo "$GOOGLE_SERVICES_JSON" | base64 --decode > app/google-services.json
+            echo "google-services.json restored from the repository secret."
+          else
+            echo "No GOOGLE_SERVICES_JSON secret set; building without Firebase."
+          fi
+
+      - name: Run unit tests
+        run: ./gradlew testDebugUnitTest --stacktrace
+
+      - name: Build the debug APK
+        run: ./gradlew assembleDebug --stacktrace
+
+      # The release build is where R8 runs, and R8 breaks things that debug never does — a stripped
+      # kotlinx.serialization serializer parses every API response perfectly in debug and fails in
+      # release. Building it here catches that on a push rather than after a demo is recorded.
+      #
+      # No signing material is needed: without it the build produces an unsigned APK, which is all
+      # this check requires. Supplying the four RELEASE_* secrets makes it a signed artefact instead.
+      - name: Build the release APK
+        env:
+          RELEASE_STORE_FILE: ${{ secrets.RELEASE_STORE_FILE }}
+          RELEASE_STORE_PASSWORD: ${{ secrets.RELEASE_STORE_PASSWORD }}
+          RELEASE_KEY_ALIAS: ${{ secrets.RELEASE_KEY_ALIAS }}
+          RELEASE_KEY_PASSWORD: ${{ secrets.RELEASE_KEY_PASSWORD }}
+        run: ./gradlew assembleRelease --stacktrace
+
+      # The R8 mapping file is the only way to read a stack trace from a release crash. Losing it
+      # means a production report that says nothing.
+      - name: Upload the R8 mapping file
+        uses: actions/upload-artifact@v4
+        if: success()
+        with:
+          name: release-mapping
+          path: android/app/build/outputs/mapping/release/mapping.txt
+          retention-days: 90
+
+      # Uploaded even on failure, because a failed run is when the detail is worth having.
+      - name: Upload test results
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: android-test-results
+          path: android/app/build/reports/tests/
+          retention-days: 14
+
+      # The APK a marker or teammate can install directly, without an Android toolchain.
+      - name: Upload the debug APK
+        uses: actions/upload-artifact@v4
+        if: success()
+        with:
+          name: app-debug
+          path: android/app/build/outputs/apk/debug/*.apk
+          retention-days: 14
+
+      - name: Summarise the run
+        if: always()
+        run: |
+          echo "### Android CI" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "| Step | Result |" >> $GITHUB_STEP_SUMMARY
+          echo "| --- | --- |" >> $GITHUB_STEP_SUMMARY
+          echo "| Build and tests | ${{ job.status }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Commit | \`${{ github.sha }}\` |" >> $GITHUB_STEP_SUMMARY
+
+  lint:
+    name: Android Lint
+    runs-on: ubuntu-latest
+    needs: build-and-test
+
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v4
+
+      - name: Set up the JDK
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Set up Gradle
+        uses: gradle/actions/setup-gradle@v4
+        with:
+          cache-read-only: true
+
+      - name: Make gradlew executable
+        run: chmod +x ./gradlew
+
+      # Reported rather than enforced for now. Turning lint into a hard gate before the screens
+      # exist would mostly flag placeholders, so it stays advisory until the UI settles.
+      - name: Run lint
+        run: ./gradlew lintDebug --stacktrace
+        continue-on-error: true
+
+      - name: Upload the lint report
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: android-lint-report
+          path: android/app/build/reports/lint-results-debug.html
+          retention-days: 14

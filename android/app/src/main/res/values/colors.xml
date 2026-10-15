@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- The navy/teal/orange palette from the Part 1 design document. -->
+<resources>
+    <color name="techies_navy">#0D2B45</color>
+    <color name="techies_teal">#1B9AAA</color>
+    <color name="techies_orange">#EF7B45</color>
+    <color name="ic_launcher_background">#0D2B45</color>
+</resources>

@@ -1,0 +1,54 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+
+    <!-- Swagger reads the XML comments on the controllers to describe each endpoint, so the
+         Android side always has a current reference to code against (section 5.2). -->
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+
+    <!-- CS1591 warns about any public member without an XML comment. The controllers and
+         contracts are documented; suppressing it keeps the build clean without demanding a
+         comment on every generated or self-evident member. CS1573 is suppressed alongside it so
+         a partially documented parameter list is allowed. -->
+    <NoWarn>$(NoWarn);CS1591;CS1573</NoWarn>
+
+    <!-- Warnings are treated as errors so the GitHub Actions build fails on anything the
+         compiler flags, rather than letting it accumulate unnoticed. -->
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <UserSecretsId>7e92f0b6-f9d7-42b2-ac7e-91ad69343270</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- Authentication: Firebase identity tokens are validated as standard JWTs against Google's
+         published signing keys (see Authentication/AuthenticationSetup.cs). The Firebase Admin
+         SDK is only needed to *send* Cloud Messaging pushes, which is a POE-phase requirement. -->
+    <PackageReference Include="FirebaseAdmin" Version="3.1.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.10" />
+
+    <!-- Data access: EF Core over PostgreSQL (sections 5.1 and 5.2). -->
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.10" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.10">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.0.10" />
+
+    <!-- Document storage: Azure Blob Storage is what the design document specifies for uploaded
+         prescriptions and lab results (section 3.9). Registered only when a connection string is
+         configured; otherwise the local filesystem implementation stands in. -->
+    <PackageReference Include="Azure.Storage.Blobs" Version="12.22.2" />
+
+    <!-- Structured logging and API documentation. -->
+    <PackageReference Include="Serilog.AspNetCore" Version="8.0.3" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.9.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- The integration tests drive the real pipeline through WebApplicationFactory. -->
+    <InternalsVisibleTo Include="TechiesHealthTracker.Api.Tests" />
+  </ItemGroup>
+
+</Project>

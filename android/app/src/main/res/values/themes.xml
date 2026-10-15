@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--
+        A bare Material 3 theme. Compose supplies the real colour scheme at runtime through
+        TechiesTheme; this exists so the activity has something to inflate before Compose starts,
+        which is what stops the brief white flash on launch.
+    -->
+    <style name="Theme.TechiesHealthTracker" parent="android:Theme.Material.Light.NoActionBar">
+        <item name="android:statusBarColor">#0D2B45</item>
+        <item name="android:windowBackground">#FFFBFE</item>
+    </style>
+</resources>

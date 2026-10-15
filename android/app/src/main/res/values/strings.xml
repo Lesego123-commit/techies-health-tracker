@@ -1,0 +1,544 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    All user-facing text lives here rather than in the Compose code.
+
+    Multi-language support is a POE requirement (Requirement 7): English plus at least two official
+    South African languages. isiZulu is in values-zu/ and Afrikaans in values-af/.
+
+    Text that comes from the API is not here. Medication names, dependant names and the server's
+    own messages are data, and translating them on the device would mean guessing at something the
+    server already decides — the API localises its notification text from the same stored
+    preference that selects these resources.
+-->
+<resources>
+    <!-- A product name, so it reads the same in every language. -->
+    <string name="app_name" translatable="false">Techies Health Tracker</string>
+    <string name="app_tagline">Medication &amp; care management</string>
+
+    <!-- Navigation -->
+    <string name="nav_home">Home</string>
+    <string name="nav_meds">Meds</string>
+    <string name="nav_trends">Trends</string>
+    <string name="nav_appointments">Appts</string>
+    <string name="nav_more">More</string>
+
+    <string name="title_today">Today</string>
+    <string name="title_dependants">Dependants</string>
+    <string name="title_adherence">Adherence</string>
+    <string name="title_appointments">Appointments</string>
+    <string name="title_settings">Settings</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_refill_forecast">Refill forecast</string>
+    <string name="title_add_medication">Add medication</string>
+    <string name="title_edit_medication">Edit medication</string>
+    <string name="title_edit_profile">Edit profile</string>
+
+    <string name="action_back">Back</string>
+    <string name="action_notifications">Notifications</string>
+    <string name="action_add_medication">Add medication</string>
+
+    <!-- Sign in -->
+    <string name="auth_log_in">Log in</string>
+    <string name="auth_create_account">Create account</string>
+    <string name="auth_email">Email address</string>
+    <string name="auth_password">Password</string>
+    <string name="auth_confirm_password">Confirm password</string>
+    <string name="auth_full_name">Full name</string>
+    <string name="auth_password_hint">At least six characters.</string>
+    <string name="auth_show">Show</string>
+    <string name="auth_hide">Hide</string>
+    <string name="auth_forgot_password">Forgot your password?</string>
+    <string name="auth_or">or</string>
+    <string name="auth_continue_with_google">G   Continue with Google</string>
+    <string name="auth_secured_by_firebase">Secured by Firebase Authentication</string>
+
+    <!-- Biometric lock -->
+    <string name="lock_title">Locked</string>
+    <string name="lock_verify">Verify it is you to open Techies Health Tracker.</string>
+    <string name="lock_not_enrolled">Biometric unlock is on for this account, but no fingerprint or face is set up on this phone.</string>
+    <string name="lock_unavailable">The sensor is unavailable at the moment. Try again shortly.</string>
+    <string name="lock_unlock">Unlock</string>
+    <string name="lock_open_settings">Open security settings</string>
+    <string name="lock_sign_out_instead">Sign out instead</string>
+    <string name="lock_prompt_title">Unlock Techies Health Tracker</string>
+    <string name="lock_prompt_subtitle">Verify it is you to see medication details</string>
+
+    <!-- Home -->
+    <string name="home_todays_doses">TODAY\'S DOSES</string>
+    <string name="home_dependants">DEPENDANTS</string>
+    <string name="home_adherence_streak">ADHERENCE STREAK</string>
+    <string name="home_mark_taken">MARK TAKEN</string>
+    <string name="home_missed">MISSED</string>
+    <string name="home_add">Add</string>
+    <string name="home_open">Open</string>
+    <string name="home_no_one_title">No one to track yet</string>
+    <string name="home_no_one_body">Add the person whose medication you are managing to get started.</string>
+    <string name="home_add_dependant">Add a dependant</string>
+    <string name="home_no_medications">No medications scheduled yet. Add one from the Meds tab.</string>
+    <string name="home_doses_left">%1$d left</string>
+    <string name="home_streak_badge">%1$s ⭐</string>
+    <string name="home_adherence_window">%1$s adherence over the last 30 days</string>
+
+    <!-- Offline and sync -->
+    <string name="sync_offline">Offline</string>
+    <string name="sync_offline_saved">Offline — saved on this phone</string>
+    <string name="sync_waiting">Waiting to sync</string>
+    <string name="sync_in_progress">Syncing…</string>
+    <string name="sync_now">Sync now</string>
+    <string name="sync_none_pending">Doses you record now are kept until you are back online.</string>
+    <plurals name="sync_pending">
+        <item quantity="one">1 dose will be sent when you are back online.</item>
+        <item quantity="other">%1$d doses will be sent when you are back online.</item>
+    </plurals>
+
+    <!-- Settings -->
+    <string name="settings_preferences">PREFERENCES</string>
+    <string name="settings_notifications">NOTIFICATIONS</string>
+    <string name="settings_medication_stock">MEDICATION STOCK</string>
+    <string name="settings_security">SECURITY</string>
+    <string name="settings_language">Language</string>
+    <string name="settings_language_detail">Used for the app and for the reminders the server sends.</string>
+    <string name="settings_dark_mode">Dark mode</string>
+    <string name="settings_following_phone">Following the phone\'s own setting.</string>
+    <string name="settings_push">Push notifications</string>
+    <string name="settings_push_detail">Turn this off to stop delivery. Events are still recorded and stay visible under the bell.</string>
+    <string name="settings_reminder_lead">Remind me before a dose</string>
+    <string name="settings_quiet_hours">Quiet hours</string>
+    <string name="settings_quiet_hours_off">Off — reminders can arrive at any hour.</string>
+    <string name="settings_quiet_hours_on">%1$s – %2$s. Reminders raised in this window are held, never discarded.</string>
+    <string name="settings_low_stock">Warn me when stock falls below</string>
+    <string name="settings_low_stock_detail">Drives the refill forecast and the low-stock alerts.</string>
+    <string name="settings_biometric">Biometric unlock</string>
+    <string name="settings_biometric_detail">Ask for your fingerprint, face or screen lock each time the app is opened.</string>
+    <string name="settings_sign_out">Sign out</string>
+    <string name="settings_stored_on_account">Preferences are stored on your account rather than on this phone, so they follow you to a new device.</string>
+    <string name="settings_signed_in">Signed in</string>
+    <string name="settings_saved">Saved</string>
+
+    <!--
+        Dose timing. Plurals rather than "hour(s)": the bracketed-s habit reads as unfinished in
+        English and does not survive translation at all, because the other two languages change the
+        noun rather than adding a letter to the end of it.
+    -->
+    <string name="dose_none_scheduled">No dose scheduled</string>
+    <string name="dose_due_now">Due now</string>
+    <string name="dose_on_date">On %1$s</string>
+    <plurals name="dose_in_minutes">
+        <item quantity="one">In 1 minute</item>
+        <item quantity="other">In %1$d minutes</item>
+    </plurals>
+    <plurals name="dose_in_hours">
+        <item quantity="one">In 1 hour</item>
+        <item quantity="other">In %1$d hours</item>
+    </plurals>
+    <plurals name="dose_overdue_minutes">
+        <item quantity="one">Overdue by 1 minute</item>
+        <item quantity="other">Overdue by %1$d minutes</item>
+    </plurals>
+    <plurals name="dose_overdue_hours">
+        <item quantity="one">Overdue by 1 hour</item>
+        <item quantity="other">Overdue by %1$d hours</item>
+    </plurals>
+    <plurals name="dose_overdue_days">
+        <item quantity="one">Overdue by 1 day</item>
+        <item quantity="other">Overdue by %1$d days</item>
+    </plurals>
+
+    <!-- Streaks and reminder lead times -->
+    <string name="streak_none">No streak yet</string>
+    <plurals name="streak_days">
+        <item quantity="one">1 day streak</item>
+        <item quantity="other">%1$d day streak</item>
+    </plurals>
+    <plurals name="lead_time_days">
+        <item quantity="one">1 day</item>
+        <item quantity="other">%1$d days</item>
+    </plurals>
+    <plurals name="lead_time_hours">
+        <item quantity="one">1 hr</item>
+        <item quantity="other">%1$d hrs</item>
+    </plurals>
+    <plurals name="lead_time_minutes">
+        <item quantity="one">1 min</item>
+        <item quantity="other">%1$d min</item>
+    </plurals>
+
+    <!-- Appointments -->
+    <string name="appt_no_dependant_title">No dependant selected</string>
+    <string name="appt_no_dependant_body">Add a dependant before booking appointments.</string>
+    <string name="appt_none_title">No appointments yet</string>
+    <string name="appt_none_body">Add a doctor\'s visit or check-up and it will appear here, with a reminder before it is due.</string>
+    <string name="appt_add">Add an appointment</string>
+    <string name="appt_upcoming">UPCOMING</string>
+    <string name="appt_past">PAST</string>
+    <string name="appt_when_with_reminder">%1$s · Reminder %2$s before</string>
+    <string name="appt_cancelled">Cancelled</string>
+    <string name="appt_cancel_visit">Cancel visit</string>
+    <string name="appt_title_label">Title</string>
+    <string name="appt_location_label">Location (optional)</string>
+    <string name="appt_remind_me">Remind me</string>
+
+    <!--
+        Format hints rather than words: the same in every language, so they are marked
+        untranslatable and the other folders inherit them.
+    -->
+    <string name="appt_title_placeholder" translatable="false">Dr Nkosi — Paediatrician</string>
+    <string name="appt_date_label">Date</string>
+    <string name="appt_date_placeholder" translatable="false">2026-09-28</string>
+    <string name="appt_time_label">Time</string>
+    <string name="appt_time_placeholder" translatable="false">09:30</string>
+
+    <!-- Form actions, shared by every dialog and form in the app -->
+    <string name="action_save">Save</string>
+    <string name="action_cancel">Cancel</string>
+    <string name="action_delete">Delete</string>
+
+    <!-- Trends and adherence -->
+    <string name="trends_no_dependant_title">No dependant selected</string>
+    <string name="trends_no_dependant_body">Add a dependant to start tracking adherence.</string>
+    <string name="trends_empty_title">Nothing to show yet</string>
+    <string name="trends_empty_body">Adherence appears once medications have schedules and doses are logged.</string>
+    <string name="trends_adherence">adherence</string>
+    <string name="trends_daily_breakdown">Daily breakdown</string>
+    <string name="trends_recent_doses">Recent doses</string>
+    <string name="trends_pattern">Pattern</string>
+    <string name="trends_stat_taken">Taken</string>
+    <string name="trends_stat_missed">Missed</string>
+    <string name="trends_stat_scheduled">Scheduled</string>
+    <string name="trends_stat_streak">Streak</string>
+
+    <!--
+        Dose statuses. The API stores these as lower-case codes ("taken", "missed") because they are
+        data; the words a caregiver reads are chosen here, and an unrecognised code falls back to the
+        code itself rather than to a blank row.
+    -->
+    <string name="dose_status_taken">Taken</string>
+    <string name="dose_status_missed">Missed</string>
+    <string name="dose_status_skipped">Skipped</string>
+    <string name="dose_status_pending">Pending</string>
+
+    <!-- A count of days, used by the range chips, the stock threshold and the forecast -->
+    <plurals name="days_count">
+        <item quantity="one">1 day</item>
+        <item quantity="other">%1$d days</item>
+    </plurals>
+
+    <!-- Dependants -->
+    <string name="dep_none_title">No dependants yet</string>
+    <string name="dep_none_body">Add the person whose medication you are managing. You can add more than one, and each keeps their own medications and schedule.</string>
+    <string name="dep_add">Add a dependant</string>
+    <string name="dep_add_another">Add another dependant</string>
+    <string name="dep_relationship_and_age">%1$s · %2$d years old</string>
+    <string name="dep_no_active_medications">No active medications</string>
+    <plurals name="dep_active_medications">
+        <item quantity="one">1 active medication</item>
+        <item quantity="other">%1$d active medications</item>
+    </plurals>
+    <string name="dep_viewing">Viewing</string>
+
+    <!-- Relationship vocabulary. The API stores the code; these are the words for it. -->
+    <string name="relationship_child">Child</string>
+    <string name="relationship_parent">Parent</string>
+    <string name="relationship_spouse">Spouse</string>
+    <string name="relationship_self">Myself</string>
+    <string name="relationship_other">Other</string>
+
+    <!-- Form fields, shared by the dependant dialog and the edit screen -->
+    <string name="field_first_name">First name</string>
+    <string name="field_last_name">Last name</string>
+    <string name="field_date_of_birth">Date of birth</string>
+    <string name="field_dob_placeholder" translatable="false">2014-03-12</string>
+    <string name="field_dob_hint">The server works out the age from this.</string>
+    <string name="field_relationship">Relationship</string>
+    <string name="field_selected">Selected: %1$s</string>
+    <string name="field_allergies">Allergies (optional)</string>
+    <string name="field_allergies_placeholder" translatable="false">Penicillin</string>
+    <string name="field_allergies_hint">Shown at the top of the profile, where it cannot be missed.</string>
+    <string name="field_medical_aid">Medical aid number (optional)</string>
+    <string name="action_save_changes">Save changes</string>
+    <string name="action_edit">Edit</string>
+    <string name="action_open">Open</string>
+
+    <!-- Dependant profile -->
+    <string name="profile_age">%1$d yrs</string>
+    <string name="profile_dob">DOB %1$s</string>
+    <string name="profile_medical_aid">Medical aid %1$s</string>
+    <string name="profile_allergies">Allergies</string>
+    <string name="profile_active_medications">ACTIVE MEDICATIONS</string>
+    <string name="profile_appointments">APPOINTMENTS</string>
+    <string name="profile_documents">DOCUMENTS</string>
+    <string name="profile_no_medications">No active medications. Add one with the + button.</string>
+    <string name="profile_view_refill">View refill forecast</string>
+    <string name="profile_no_appointments">No upcoming appointments.</string>
+    <string name="profile_no_documents">No documents stored for this person yet.</string>
+    <string name="profile_manage_documents">Manage documents</string>
+    <string name="profile_remaining">%1$d of %2$d remaining</string>
+    <string name="profile_document_size">%1$s · %2$d KB</string>
+    <plurals name="profile_times_daily">
+        <item quantity="one">once daily</item>
+        <item quantity="other">%1$d times daily</item>
+    </plurals>
+
+    <!-- Stock severity, mirroring the bands the API returns -->
+    <string name="stock_out">Out of stock</string>
+    <string name="stock_low">Low stock</string>
+    <string name="stock_active">Active</string>
+
+    <!-- Medication form -->
+    <string name="med_name">Medication name</string>
+    <string name="med_name_placeholder" translatable="false">Amoxicillin</string>
+    <string name="med_dose">Dose</string>
+    <string name="med_dose_placeholder" translatable="false">500</string>
+    <string name="med_pack_size">Pack size</string>
+    <string name="med_pack_placeholder" translatable="false">30</string>
+    <string name="med_remaining">Remaining stock</string>
+    <string name="med_remaining_hint">Correct this after a repeat prescription. Logging a dose as taken decrements it automatically.</string>
+    <string name="med_unit">Unit</string>
+    <string name="med_form">Form</string>
+    <string name="med_schedule">Schedule</string>
+    <string name="med_dose_time">Dose %1$d time</string>
+    <string name="med_time_placeholder" translatable="false">08:00</string>
+    <string name="med_times_hint">Times are on a 24-hour clock, in your own time zone. The server works out when each dose is actually due.</string>
+    <string name="med_instructions">Instructions (optional)</string>
+    <string name="med_instructions_placeholder">Take with food</string>
+    <string name="med_save">Save medication</string>
+    <string name="med_schedule_locked">The dose times cannot be changed here: adherence already recorded was scored against them. Retire this medication and add it again to move to a new schedule.</string>
+
+    <string name="freq_once_daily">Once a day</string>
+    <string name="freq_twice_daily">Twice a day</string>
+    <string name="freq_three_times_daily">Three times a day</string>
+
+    <!-- Dosage units. mg, ml, g and mcg are international symbols and stay as they are. -->
+    <string name="unit_tablets">tablets</string>
+    <string name="unit_puffs">puffs</string>
+    <string name="unit_drops">drops</string>
+
+    <string name="form_tablet">Tablet</string>
+    <string name="form_capsule">Capsule</string>
+    <string name="form_liquid">Liquid</string>
+    <string name="form_injection">Injection</string>
+    <string name="form_inhaler">Inhaler</string>
+    <string name="form_drops">Drops</string>
+
+    <!-- Refill forecast -->
+    <string name="refill_no_dependant_title">No dependant selected</string>
+    <string name="refill_no_dependant_body">Add a dependant and their medications to see refill forecasts.</string>
+    <string name="refill_empty_title">Nothing to forecast</string>
+    <string name="refill_empty_body">Refill predictions appear once a medication has an active schedule.</string>
+    <string name="refill_all_ok">All medications have enough stock</string>
+    <plurals name="refill_alerts">
+        <item quantity="one">1 medication needs a refill</item>
+        <item quantity="other">%1$d medications need a refill</item>
+    </plurals>
+    <string name="refill_nearest_pharmacy">NEAREST PHARMACY</string>
+    <string name="refill_days_left">days left</string>
+    <string name="refill_no_schedule_short">no schedule</string>
+    <string name="refill_runs_out">Runs out around %1$s</string>
+    <string name="refill_usage">Using about %1$s a day</string>
+    <string name="refill_no_schedule_body">No active schedule, so no run-out date can be forecast.</string>
+    <string name="refill_out_of_stock">Out of stock — arrange a repeat prescription</string>
+    <string name="refill_below_threshold">Below your %1$d-day threshold</string>
+    <string name="refill_repeat_prescription">Need a repeat prescription?</string>
+    <string name="refill_maps_hint">Searches for pharmacies around you, nearest first.</string>
+    <string name="refill_find_pharmacy">Find a pharmacy nearby</string>
+
+    <!-- Notifications -->
+    <string name="notif_empty_title">Nothing yet</string>
+    <string name="notif_empty_body">Dose reminders, missed-dose alerts, refill warnings and appointment reminders will appear here.</string>
+    <string name="notif_not_delivered">%1$s · not yet delivered</string>
+
+    <!--
+        Messages the app writes itself: validation the client can check without a round trip, and
+        fallbacks for when a failure arrives with no message of its own. Anything the API words is
+        shown as it arrives, because the server localises from the same stored preference.
+    -->
+    <string name="validate_appointment_title">Give the appointment a title.</string>
+    <string name="validate_appointment_datetime">Enter the date as yyyy-MM-dd and the time as HH:mm.</string>
+    <string name="validate_email_first">Enter your email address first.</string>
+    <string name="validate_name_required">First and last name are both required.</string>
+    <string name="validate_dob_format">Enter the date of birth as yyyy-MM-dd, for example 2014-03-12.</string>
+    <string name="validate_med_name_dose">A name and a dosage amount are both required.</string>
+    <string name="validate_pack_size">Enter how many are in the pack, as a whole number.</string>
+    <string name="validate_select_dependant">Select a dependant first.</string>
+    <string name="validate_remaining_min">Remaining stock must be zero or more.</string>
+    <string name="validate_remaining_max">Remaining stock cannot exceed the pack size of %1$d.</string>
+
+    <string name="err_save">Could not save.</string>
+    <string name="err_save_change">Could not save that change.</string>
+    <string name="err_cancel_visit">Could not cancel that visit.</string>
+    <string name="err_remove_profile">Could not remove that profile.</string>
+    <string name="err_load_profile">Could not load that profile.</string>
+    <string name="err_load_medication">Could not load that medication.</string>
+    <string name="err_reach_server">Could not reach the server.</string>
+    <string name="err_send_reset">Could not send the reset email.</string>
+    <string name="err_schedule_not_saved">The medication was saved, but its schedule was not: %1$s. Add the schedule from the medication list.</string>
+
+    <string name="auth_reset_sent">If an account exists for that address, a reset link is on its way.</string>
+
+    <string name="settings_biometric_not_enrolled">Set up a fingerprint, face or screen lock on this phone first, then turn this on.</string>
+    <string name="settings_biometric_no_hardware">This device has no biometric sensor or screen lock.</string>
+    <string name="settings_biometric_unavailable">The sensor is unavailable right now. Try again shortly.</string>
+
+    <!--
+        The confirmations Home shows after a dose is recorded. Written as whole sentences per case
+        rather than a stem with clauses appended: the offline and low-stock variants read differently
+        in each language, and gluing a clause onto a sentence only works in English.
+    -->
+    <string name="home_msg_taken">%1$s marked as taken</string>
+    <string name="home_msg_missed">%1$s marked as missed</string>
+    <string name="home_msg_taken_low">%1$s marked as taken — running low, arrange a refill</string>
+    <string name="home_msg_missed_low">%1$s marked as missed — running low, arrange a refill</string>
+    <string name="home_msg_taken_offline">%1$s marked as taken — saved on this phone, syncing when you are back online</string>
+    <string name="home_msg_missed_offline">%1$s marked as missed — saved on this phone, syncing when you are back online</string>
+
+    <string name="greeting_morning">Good morning</string>
+    <string name="greeting_afternoon">Good afternoon</string>
+    <string name="greeting_evening">Good evening</string>
+
+    <!-- Credential validation, checked on the device before a round trip -->
+    <string name="validate_email_blank">Enter your email address.</string>
+    <string name="validate_email_invalid">That email address does not look valid.</string>
+    <string name="validate_password_blank">Enter your password.</string>
+    <string name="validate_password_short">Use a password of at least %1$d characters.</string>
+    <string name="validate_name_blank">Enter your name.</string>
+    <string name="validate_passwords_differ">The two passwords do not match.</string>
+    <string name="validate_time_format">Enter each time on a 24-hour clock, e.g. 08:00.</string>
+    <string name="validate_times_distinct">Each dose time must be different.</string>
+
+    <!--
+        Sign-in failures. Firebase reports these as codes; the wording is ours, which is what makes
+        them translatable at all. Firebase\'s own message text is only ever shown when a failure
+        arrives that none of these cover.
+    -->
+    <string name="auth_err_email_not_enabled">Email sign-in is not enabled for this project yet. Enable Email/Password under Authentication in the Firebase console, then try again.</string>
+    <string name="auth_err_email_in_use">An account already exists for that email address. Try logging in instead.</string>
+    <string name="auth_err_weak_password">That password is too weak. Use at least %1$d characters.</string>
+    <string name="auth_err_disabled">That account has been disabled.</string>
+    <string name="auth_err_too_many">Too many attempts. Wait a few minutes and try again.</string>
+    <string name="auth_err_bad_credentials">That email address or password is not correct.</string>
+    <string name="auth_err_network">Could not reach the server. Check your connection and try again.</string>
+    <string name="auth_err_create_failed">Could not create the account. Please try again.</string>
+    <string name="auth_err_login_failed">Could not log in. Please try again.</string>
+    <string name="auth_err_no_user">Signed in, but no Firebase user was returned.</string>
+    <string name="auth_err_no_user_after_create">The account was created, but no user was returned.</string>
+    <string name="auth_err_no_google_account">No Google account is available on this device. Add one in Settings and try again.</string>
+    <string name="auth_err_google_refused">Google sign-in was refused. Check that this build\'s SHA-1 fingerprint is registered in the Firebase console.</string>
+    <string name="auth_err_sign_in_failed">Sign-in failed. Please try again.</string>
+
+    <!--
+        Failures the client words itself, when the request never reached the API or the API replied
+        with something that was not its own error envelope. Anything the server does word arrives
+        already in the caregiver\'s language, because the API localises from the same stored
+        preference that selects these resources, so it is shown exactly as it arrives.
+    -->
+    <string name="api_err_network">No connection to the server. Check your network and try again.</string>
+    <string name="api_err_unauthenticated">You are not signed in. Please sign in and try again.</string>
+    <string name="api_err_generic">Something went wrong. Please try again.</string>
+    <string name="api_err_invalid_request">That request was not valid.</string>
+    <string name="api_err_session_expired">Your session has expired. Please sign in again.</string>
+    <string name="api_err_forbidden">You do not have access to that.</string>
+    <string name="api_err_not_found">That record could not be found.</string>
+    <string name="api_err_conflict">Someone else changed this. Refresh and try again.</string>
+    <string name="api_err_unavailable">The service is temporarily unavailable. Please try again shortly.</string>
+
+    <!--
+        Notification channel names. These are shown by Android itself, under the app\'s entry in
+        system Settings, so they have to be resources: the system reads them back when the user goes
+        looking for the switch that turns a category off.
+    -->
+    <string name="channel_dose_reminder">Dose reminders</string>
+    <string name="channel_dose_reminder_detail">A dose is due shortly.</string>
+    <string name="channel_missed_dose">Missed doses</string>
+    <string name="channel_missed_dose_detail">A dose was not recorded as taken.</string>
+    <string name="channel_refill_alert">Refill alerts</string>
+    <string name="channel_refill_alert_detail">A medication is running low.</string>
+    <string name="channel_appointment">Appointment reminders</string>
+    <string name="channel_appointment_detail">An appointment is coming up.</string>
+
+    <!-- Pharmacy finder (Additional Feature 1) -->
+    <string name="title_pharmacy">Pharmacies nearby</string>
+    <string name="pharmacy_find_title">Find a pharmacy near you</string>
+    <string name="pharmacy_locating">Finding your location…</string>
+    <string name="pharmacy_needs_permission">This needs your approximate location to search around you. Nothing is stored against your account.</string>
+    <string name="pharmacy_services_off">Location services are switched off on this phone. Turn them on to search nearby.</string>
+    <string name="pharmacy_no_fix">Your location could not be found. Move somewhere with better signal and try again.</string>
+    <string name="pharmacy_allow_location">Allow location</string>
+    <string name="pharmacy_open_settings">Open location settings</string>
+    <string name="pharmacy_privacy_note">Your coordinates are used for this search only.</string>
+    <string name="pharmacy_none_title">No pharmacies found</string>
+    <string name="pharmacy_none_body">Nothing was found inside the search radius. Try a wider one.</string>
+    <string name="pharmacy_search_wider">Search a wider area</string>
+    <string name="pharmacy_directions">Directions</string>
+    <string name="pharmacy_call">Call</string>
+    <string name="pharmacy_from_cache">Results were cached within the last 24 hours, so opening times may have changed.</string>
+    <string name="pharmacy_err_search">The pharmacy search could not be completed. Please try again shortly.</string>
+    <string name="pharmacy_no_maps_app">No maps app is installed on this device.</string>
+    <string name="pharmacy_no_phone_app">No phone app is available on this device.</string>
+    <string name="pharmacy_no_settings_app">Location settings could not be opened on this device.</string>
+    <plurals name="pharmacy_radius_km">
+        <item quantity="one">1 km</item>
+        <item quantity="other">%1$d km</item>
+    </plurals>
+    <plurals name="pharmacy_found">
+        <item quantity="one">1 pharmacy, nearest first</item>
+        <item quantity="other">%1$d pharmacies, nearest first</item>
+    </plurals>
+
+    <!-- Distances. Metres below a kilometre, because that is how someone deciding to walk thinks. -->
+    <string name="distance_metres">%1$s m</string>
+    <string name="distance_kilometres">%1$s km</string>
+
+    <!-- Documents (Additional Feature 2) -->
+    <string name="title_documents">Documents</string>
+    <string name="doc_no_dependant_title">No dependant selected</string>
+    <string name="doc_no_dependant_body">Choose who these documents belong to before adding any.</string>
+    <string name="doc_empty_title">No documents yet</string>
+    <string name="doc_empty_body">Photograph a prescription or upload a lab result, and it will be kept here with the rest of this person\'s records.</string>
+    <string name="doc_capture">Take a photo</string>
+    <string name="doc_upload_file">Upload a file</string>
+    <string name="doc_add_title">Add a document</string>
+    <string name="doc_title_label">Title</string>
+    <string name="doc_type_label">What is it?</string>
+    <string name="doc_upload">Upload</string>
+    <string name="doc_uploaded">Document uploaded</string>
+    <string name="doc_deleted">Document deleted</string>
+    <string name="doc_chosen_file">%1$s · %2$s</string>
+    <string name="doc_size_and_date">%1$s · %2$s</string>
+    <string name="doc_delete_title">Delete this document?</string>
+    <string name="doc_delete_body">%1$s will be removed for good. This cannot be undone.</string>
+    <string name="doc_cannot_upload">That file cannot be uploaded</string>
+
+    <!-- Document categories. The API stores the code; these are the words for it. -->
+    <string name="doc_type_prescription">Prescription</string>
+    <string name="doc_type_lab_result">Lab result</string>
+    <string name="doc_type_medical_report">Medical report</string>
+    <string name="doc_type_other">Other</string>
+
+    <string name="doc_err_type">Only photos and PDFs can be uploaded — JPEG, PNG, HEIC, WebP or PDF.</string>
+    <string name="doc_err_too_large">Files may be at most %1$d MB. Try photographing the page again at a lower quality.</string>
+    <string name="doc_err_title_required">Give the document a title so it can be found later.</string>
+    <string name="doc_err_unreadable">That file could not be read. Try choosing it again.</string>
+    <string name="doc_err_no_link">That document could not be opened right now. Please try again shortly.</string>
+    <string name="doc_err_no_camera">No camera app is available on this device.</string>
+    <string name="doc_err_no_viewer">No app on this device can open that file type.</string>
+    <string name="doc_err_generic">Something went wrong with that document. Please try again.</string>
+
+    <string name="action_ok">OK</string>
+
+    <!-- Shared states -->
+    <string name="state_retry">Try again</string>
+    <string name="state_error_title">Something went wrong</string>
+    <string name="state_error_body">Please try again.</string>
+    <string name="state_error_reference">Reference: %1$s</string>
+
+
+    <!-- Firebase configuration -->
+    <string name="firebase_not_configured">Firebase is not configured</string>
+    <!--
+        Deliberately untranslated: this is a build-setup instruction naming a file and
+        two fields in the Firebase console, and it only ever appears to whoever is
+        setting the project up. Translating console field names would make it harder to
+        follow, not easier.
+    -->
+    <string name="firebase_not_configured_detail" translatable="false">Add google-services.json to the app module and register this build\'s SHA-1 fingerprint in the Firebase console, then rebuild.</string>
+</resources>

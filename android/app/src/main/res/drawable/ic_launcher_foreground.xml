@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Placeholder launcher icon: a capsule over a heartbeat line, matching the concept in section
+    2.1 of the Part 1 design document. Drawn as a vector so the prototype has a real icon without
+    shipping bitmap assets; the brief defers final production artwork to the POE phase.
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- Heartbeat trace -->
+    <path
+        android:strokeColor="#1B9AAA"
+        android:strokeWidth="3.5"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:fillColor="#00000000"
+        android:pathData="M28,58 L40,58 L45,48 L52,68 L58,54 L63,58 L80,58" />
+
+    <!-- Capsule body -->
+    <path
+        android:fillColor="#EF7B45"
+        android:pathData="M44,34 m0,-8 a8,8 0 0,1 8,8 l0,0 a8,8 0 0,1 -8,8 l-4,0 a8,8 0 0,1 -8,-8 l0,0 a8,8 0 0,1 8,-8 z" />
+
+    <!-- Capsule highlight -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:fillAlpha="0.85"
+        android:pathData="M40,26 l4,0 a8,8 0 0,1 8,8 l0,0 a8,8 0 0,1 -8,8 l-4,0 z" />
+</vector>

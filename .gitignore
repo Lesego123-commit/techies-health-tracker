@@ -1,0 +1,48 @@
+# ---- .NET build output ----
+bin/
+obj/
+[Dd]ebug/
+[Rr]elease/
+publish/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# ---- Test output ----
+TestResults/
+[Tt]est[Rr]esult*/
+coverage*.json
+coverage*.xml
+*.coverage
+*.trx
+
+# ---- Runtime output ----
+# Serilog writes rolling log files next to the binaries, and uploaded documents land in App_Data
+# under the local file-storage implementation. Neither belongs in version control.
+logs/
+App_Data/
+
+# ---- Secrets ----
+# Nothing here should ever be committed. The connection string, the Firebase service account, the
+# GeoApify key and the document signing key are supplied through user secrets locally and through
+# the Azure App Service configuration in production. appsettings.json holds only empty placeholders.
+appsettings.Local.json
+appsettings.Production.json
+*firebase-adminsdk*.json
+*serviceaccount*.json
+.env
+secrets.json
+
+# ---- IDE ----
+.vs/
+.vscode/
+.idea/
+*.swp
+*.DS_Store
+Thumbs.db
+
+# ---- NuGet ----
+*.nupkg
+packages/
+!packages/build/

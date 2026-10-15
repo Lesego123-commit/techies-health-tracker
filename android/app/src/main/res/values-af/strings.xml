@@ -1,0 +1,489 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Afrikaans (Requirement 7).
+
+    Translated for meaning rather than word for word, because several of the English strings are
+    idiomatic. "Mark taken" becomes "Gemerk geneem" rather than a literal rendering, and the
+    offline wording avoids the English habit of turning nouns into verbs.
+
+    These should be read by a first-language speaker before submission. The developer is not one,
+    and a medication app is the wrong place for a translation nobody has checked.
+-->
+<resources>
+    <string name="app_tagline">Medikasie- en sorgbestuur</string>
+
+    <!-- Navigation -->
+    <string name="nav_home">Tuis</string>
+    <string name="nav_meds">Medisyne</string>
+    <string name="nav_trends">Tendense</string>
+    <string name="nav_appointments">Afsprake</string>
+    <string name="nav_more">Meer</string>
+
+    <string name="title_today">Vandag</string>
+    <string name="title_dependants">Afhanklikes</string>
+    <string name="title_adherence">Nakoming</string>
+    <string name="title_appointments">Afsprake</string>
+    <string name="title_settings">Instellings</string>
+    <string name="title_notifications">Kennisgewings</string>
+    <string name="title_refill_forecast">Hervullingsvooruitskatting</string>
+    <string name="title_add_medication">Voeg medikasie by</string>
+    <string name="title_edit_medication">Wysig medikasie</string>
+    <string name="title_edit_profile">Wysig profiel</string>
+
+    <string name="action_back">Terug</string>
+    <string name="action_notifications">Kennisgewings</string>
+    <string name="action_add_medication">Voeg medikasie by</string>
+
+    <!-- Sign in -->
+    <string name="auth_log_in">Meld aan</string>
+    <string name="auth_create_account">Skep rekening</string>
+    <string name="auth_email">E-posadres</string>
+    <string name="auth_password">Wagwoord</string>
+    <string name="auth_confirm_password">Bevestig wagwoord</string>
+    <string name="auth_full_name">Volle naam</string>
+    <string name="auth_password_hint">Ten minste ses karakters.</string>
+    <string name="auth_show">Wys</string>
+    <string name="auth_hide">Versteek</string>
+    <string name="auth_forgot_password">Wagwoord vergeet?</string>
+    <string name="auth_or">of</string>
+    <string name="auth_continue_with_google">G   Gaan voort met Google</string>
+    <string name="auth_secured_by_firebase">Beveilig deur Firebase-verifikasie</string>
+
+    <!-- Biometric lock -->
+    <string name="lock_title">Gesluit</string>
+    <string name="lock_verify">Bevestig dat dit jy is om Techies Health Tracker oop te maak.</string>
+    <string name="lock_not_enrolled">Biometriese ontsluiting is aan vir hierdie rekening, maar geen vingerafdruk of gesig is op hierdie foon opgestel nie.</string>
+    <string name="lock_unavailable">Die sensor is tans nie beskikbaar nie. Probeer binnekort weer.</string>
+    <string name="lock_unlock">Ontsluit</string>
+    <string name="lock_open_settings">Maak sekuriteitsinstellings oop</string>
+    <string name="lock_sign_out_instead">Meld eerder af</string>
+    <string name="lock_prompt_title">Ontsluit Techies Health Tracker</string>
+    <string name="lock_prompt_subtitle">Bevestig dat dit jy is om medikasiebesonderhede te sien</string>
+
+    <!-- Home -->
+    <string name="home_todays_doses">VANDAG SE DOSISSE</string>
+    <string name="home_dependants">AFHANKLIKES</string>
+    <string name="home_adherence_streak">NAKOMINGSREEKS</string>
+    <string name="home_mark_taken">MERK GENEEM</string>
+    <string name="home_missed">GEMIS</string>
+    <string name="home_add">Voeg by</string>
+    <string name="home_open">Maak oop</string>
+    <string name="home_no_one_title">Nog niemand om op te volg nie</string>
+    <string name="home_no_one_body">Voeg die persoon by wie se medikasie jy bestuur om te begin.</string>
+    <string name="home_add_dependant">Voeg \'n afhanklike by</string>
+    <string name="home_no_medications">Nog geen medikasie geskeduleer nie. Voeg een by vanaf die Medisyne-oortjie.</string>
+    <string name="home_doses_left">%1$d oor</string>
+    <string name="home_streak_badge">%1$s ⭐</string>
+    <string name="home_adherence_window">%1$s nakoming oor die laaste 30 dae</string>
+
+    <!-- Offline and sync -->
+    <string name="sync_offline">Vanlyn</string>
+    <string name="sync_offline_saved">Vanlyn — op hierdie foon gestoor</string>
+    <string name="sync_waiting">Wag om te sinkroniseer</string>
+    <string name="sync_in_progress">Sinkroniseer tans…</string>
+    <string name="sync_now">Sinkroniseer nou</string>
+    <string name="sync_none_pending">Dosisse wat jy nou aanteken word gehou totdat jy weer aanlyn is.</string>
+    <plurals name="sync_pending">
+        <item quantity="one">1 dosis sal gestuur word wanneer jy weer aanlyn is.</item>
+        <item quantity="other">%1$d dosisse sal gestuur word wanneer jy weer aanlyn is.</item>
+    </plurals>
+
+    <!-- Settings -->
+    <string name="settings_preferences">VOORKEURE</string>
+    <string name="settings_notifications">KENNISGEWINGS</string>
+    <string name="settings_medication_stock">MEDIKASIEVOORRAAD</string>
+    <string name="settings_security">SEKURITEIT</string>
+    <string name="settings_language">Taal</string>
+    <string name="settings_language_detail">Word gebruik vir die program en vir die herinneringe wat die bediener stuur.</string>
+    <string name="settings_dark_mode">Donker modus</string>
+    <string name="settings_following_phone">Volg die foon se eie instelling.</string>
+    <string name="settings_push">Stootkennisgewings</string>
+    <string name="settings_push_detail">Skakel dit af om aflewering te stop. Gebeure word steeds aangeteken en bly sigbaar onder die klokkie.</string>
+    <string name="settings_reminder_lead">Herinner my voor \'n dosis</string>
+    <string name="settings_quiet_hours">Stil ure</string>
+    <string name="settings_quiet_hours_off">Af — herinneringe kan op enige uur opdaag.</string>
+    <string name="settings_quiet_hours_on">%1$s – %2$s. Herinneringe wat in hierdie venster ontstaan word teruggehou, nooit weggegooi nie.</string>
+    <string name="settings_low_stock">Waarsku my wanneer voorraad minder is as</string>
+    <string name="settings_low_stock_detail">Dryf die hervullingsvooruitskatting en die lae-voorraad-waarskuwings aan.</string>
+    <string name="settings_biometric">Biometriese ontsluiting</string>
+    <string name="settings_biometric_detail">Vra vir jou vingerafdruk, gesig of skermslot elke keer as die program oopgemaak word.</string>
+    <string name="settings_sign_out">Meld af</string>
+    <string name="settings_stored_on_account">Voorkeure word op jou rekening gestoor eerder as op hierdie foon, sodat hulle saam met jou na \'n nuwe toestel gaan.</string>
+    <string name="settings_signed_in">Aangemeld</string>
+    <string name="settings_saved">Gestoor</string>
+
+    <!-- Dose timing -->
+    <string name="dose_none_scheduled">Geen dosis geskeduleer nie</string>
+    <string name="dose_due_now">Nou verskuldig</string>
+    <string name="dose_on_date">Op %1$s</string>
+    <plurals name="dose_in_minutes">
+        <item quantity="one">Oor 1 minuut</item>
+        <item quantity="other">Oor %1$d minute</item>
+    </plurals>
+    <plurals name="dose_in_hours">
+        <item quantity="one">Oor 1 uur</item>
+        <item quantity="other">Oor %1$d uur</item>
+    </plurals>
+    <plurals name="dose_overdue_minutes">
+        <item quantity="one">1 minuut agterstallig</item>
+        <item quantity="other">%1$d minute agterstallig</item>
+    </plurals>
+    <plurals name="dose_overdue_hours">
+        <item quantity="one">1 uur agterstallig</item>
+        <item quantity="other">%1$d uur agterstallig</item>
+    </plurals>
+    <plurals name="dose_overdue_days">
+        <item quantity="one">1 dag agterstallig</item>
+        <item quantity="other">%1$d dae agterstallig</item>
+    </plurals>
+
+    <!-- Streaks and reminder lead times -->
+    <string name="streak_none">Nog geen reeks nie</string>
+    <plurals name="streak_days">
+        <item quantity="one">1 dag se reeks</item>
+        <item quantity="other">%1$d dae se reeks</item>
+    </plurals>
+    <plurals name="lead_time_days">
+        <item quantity="one">1 dag</item>
+        <item quantity="other">%1$d dae</item>
+    </plurals>
+    <plurals name="lead_time_hours">
+        <item quantity="one">1 uur</item>
+        <item quantity="other">%1$d uur</item>
+    </plurals>
+    <plurals name="lead_time_minutes">
+        <item quantity="one">1 min</item>
+        <item quantity="other">%1$d min</item>
+    </plurals>
+
+    <!-- Appointments -->
+    <string name="appt_no_dependant_title">Geen afhanklike gekies nie</string>
+    <string name="appt_no_dependant_body">Voeg \'n afhanklike by voordat jy afsprake maak.</string>
+    <string name="appt_none_title">Nog geen afsprake nie</string>
+    <string name="appt_none_body">Voeg \'n dokter se besoek of ondersoek by en dit sal hier verskyn, met \'n herinnering voordat dit betyds is.</string>
+    <string name="appt_add">Voeg \'n afspraak by</string>
+    <string name="appt_upcoming">KOMENDE</string>
+    <string name="appt_past">VERBY</string>
+    <string name="appt_when_with_reminder">%1$s · Herinnering %2$s vooraf</string>
+    <string name="appt_cancelled">Gekanselleer</string>
+    <string name="appt_cancel_visit">Kanselleer besoek</string>
+    <string name="appt_title_label">Titel</string>
+    <string name="appt_location_label">Plek (opsioneel)</string>
+    <string name="appt_remind_me">Herinner my</string>
+    <string name="appt_date_label">Datum</string>
+    <string name="appt_time_label">Tyd</string>
+
+    <!-- Form actions -->
+    <string name="action_save">Stoor</string>
+    <string name="action_cancel">Kanselleer</string>
+    <string name="action_delete">Skrap</string>
+
+    <!-- Trends and adherence -->
+    <string name="trends_no_dependant_title">Geen afhanklike gekies nie</string>
+    <string name="trends_no_dependant_body">Voeg \'n afhanklike by om nakoming te begin volg.</string>
+    <string name="trends_empty_title">Niks om te wys nie</string>
+    <string name="trends_empty_body">Nakoming verskyn sodra medikasie skedules het en dosisse aangeteken is.</string>
+    <string name="trends_adherence">nakoming</string>
+    <string name="trends_daily_breakdown">Daaglikse uiteensetting</string>
+    <string name="trends_recent_doses">Onlangse dosisse</string>
+    <string name="trends_pattern">Patroon</string>
+    <string name="trends_stat_taken">Geneem</string>
+    <string name="trends_stat_missed">Gemis</string>
+    <string name="trends_stat_scheduled">Geskeduleer</string>
+    <string name="trends_stat_streak">Reeks</string>
+
+    <!-- Dose statuses -->
+    <string name="dose_status_taken">Geneem</string>
+    <string name="dose_status_missed">Gemis</string>
+    <string name="dose_status_skipped">Oorgeslaan</string>
+    <string name="dose_status_pending">Hangend</string>
+
+    <plurals name="days_count">
+        <item quantity="one">1 dag</item>
+        <item quantity="other">%1$d dae</item>
+    </plurals>
+
+    <!-- Dependants -->
+    <string name="dep_none_title">Nog geen afhanklikes nie</string>
+    <string name="dep_none_body">Voeg die persoon by wie se medikasie jy bestuur. Jy kan meer as een byvoeg, en elkeen hou sy eie medikasie en skedule.</string>
+    <string name="dep_add">Voeg \'n afhanklike by</string>
+    <string name="dep_add_another">Voeg nog \'n afhanklike by</string>
+    <string name="dep_relationship_and_age">%1$s · %2$d jaar oud</string>
+    <string name="dep_no_active_medications">Geen aktiewe medikasie nie</string>
+    <plurals name="dep_active_medications">
+        <item quantity="one">1 aktiewe medikasie</item>
+        <item quantity="other">%1$d aktiewe medikasies</item>
+    </plurals>
+    <string name="dep_viewing">Word bekyk</string>
+
+    <!-- Relationship vocabulary -->
+    <string name="relationship_child">Kind</string>
+    <string name="relationship_parent">Ouer</string>
+    <string name="relationship_spouse">Gade</string>
+    <string name="relationship_self">Myself</string>
+    <string name="relationship_other">Ander</string>
+
+    <!-- Form fields -->
+    <string name="field_first_name">Naam</string>
+    <string name="field_last_name">Van</string>
+    <string name="field_date_of_birth">Geboortedatum</string>
+    <string name="field_dob_hint">Die bediener bereken die ouderdom hieruit.</string>
+    <string name="field_relationship">Verwantskap</string>
+    <string name="field_selected">Gekies: %1$s</string>
+    <string name="field_allergies">Allergie (opsioneel)</string>
+    <string name="field_allergies_hint">Word boaan die profiel gewys, waar dit nie gemis kan word nie.</string>
+    <string name="field_medical_aid">Mediese fonds se nommer (opsioneel)</string>
+    <string name="action_save_changes">Stoor veranderinge</string>
+    <string name="action_edit">Wysig</string>
+    <string name="action_open">Maak oop</string>
+
+    <!-- Dependant profile -->
+    <string name="profile_age">%1$d jr</string>
+    <string name="profile_dob">Geb. %1$s</string>
+    <string name="profile_medical_aid">Mediese fonds %1$s</string>
+    <string name="profile_allergies">Allergie</string>
+    <string name="profile_active_medications">AKTIEWE MEDIKASIE</string>
+    <string name="profile_appointments">AFSPRAKE</string>
+    <string name="profile_documents">DOKUMENTE</string>
+    <string name="profile_no_medications">Geen aktiewe medikasie nie. Voeg een by met die +-knoppie.</string>
+    <string name="profile_view_refill">Bekyk hervullingsvooruitskatting</string>
+    <string name="profile_no_appointments">Geen komende afsprake nie.</string>
+    <string name="profile_no_documents">Nog geen dokumente vir hierdie persoon gestoor nie.</string>
+    <string name="profile_manage_documents">Bestuur dokumente</string>
+    <string name="profile_remaining">%1$d van %2$d oor</string>
+    <string name="profile_document_size">%1$s · %2$d KB</string>
+    <plurals name="profile_times_daily">
+        <item quantity="one">een keer per dag</item>
+        <item quantity="other">%1$d keer per dag</item>
+    </plurals>
+
+    <!-- Stock severity -->
+    <string name="stock_out">Voorraad uit</string>
+    <string name="stock_low">Lae voorraad</string>
+    <string name="stock_active">Aktief</string>
+
+    <!-- Medication form -->
+    <string name="med_name">Naam van medikasie</string>
+    <string name="med_dose">Dosis</string>
+    <string name="med_pack_size">Pakgrootte</string>
+    <string name="med_remaining">Oorblywende voorraad</string>
+    <string name="med_remaining_hint">Stel dit reg na \'n herhaalvoorskrif. Wanneer \'n dosis as geneem aangeteken word, word dit outomaties verminder.</string>
+    <string name="med_unit">Eenheid</string>
+    <string name="med_form">Vorm</string>
+    <string name="med_schedule">Skedule</string>
+    <string name="med_dose_time">Tyd vir dosis %1$d</string>
+    <string name="med_times_hint">Tye is op \'n 24-uur-horlosie, in jou eie tydsone. Die bediener bereken wanneer elke dosis werklik verskuldig is.</string>
+    <string name="med_instructions">Instruksies (opsioneel)</string>
+    <string name="med_instructions_placeholder">Neem saam met kos</string>
+    <string name="med_save">Stoor medikasie</string>
+    <string name="med_schedule_locked">Die dosistye kan nie hier verander word nie: nakoming wat reeds aangeteken is, is daarteen gemeet. Trek hierdie medikasie terug en voeg dit weer by om na \'n nuwe skedule te skuif.</string>
+
+    <string name="freq_once_daily">Een keer per dag</string>
+    <string name="freq_twice_daily">Twee keer per dag</string>
+    <string name="freq_three_times_daily">Drie keer per dag</string>
+
+    <!-- Dosage units -->
+    <string name="unit_tablets">tablette</string>
+    <string name="unit_puffs">pofies</string>
+    <string name="unit_drops">druppels</string>
+
+    <string name="form_tablet">Tablet</string>
+    <string name="form_capsule">Kapsule</string>
+    <string name="form_liquid">Vloeistof</string>
+    <string name="form_injection">Inspuiting</string>
+    <string name="form_inhaler">Inasemer</string>
+    <string name="form_drops">Druppels</string>
+
+    <!-- Refill forecast -->
+    <string name="refill_no_dependant_title">Geen afhanklike gekies nie</string>
+    <string name="refill_no_dependant_body">Voeg \'n afhanklike en sy medikasie by om hervullingsvooruitskattings te sien.</string>
+    <string name="refill_empty_title">Niks om te voorspel nie</string>
+    <string name="refill_empty_body">Hervullingsvoorspellings verskyn sodra \'n medikasie \'n aktiewe skedule het.</string>
+    <string name="refill_all_ok">Alle medikasie het genoeg voorraad</string>
+    <plurals name="refill_alerts">
+        <item quantity="one">1 medikasie moet hervul word</item>
+        <item quantity="other">%1$d medikasies moet hervul word</item>
+    </plurals>
+    <string name="refill_nearest_pharmacy">NAASTE APTEEK</string>
+    <string name="refill_days_left">dae oor</string>
+    <string name="refill_no_schedule_short">geen skedule</string>
+    <string name="refill_runs_out">Raak omtrent %1$s op</string>
+    <string name="refill_usage">Gebruik ongeveer %1$s per dag</string>
+    <string name="refill_no_schedule_body">Geen aktiewe skedule nie, dus kan geen opraakdatum voorspel word nie.</string>
+    <string name="refill_out_of_stock">Voorraad uit — kry \'n herhaalvoorskrif</string>
+    <string name="refill_below_threshold">Onder jou drempel van %1$d dae</string>
+    <string name="refill_repeat_prescription">Het jy \'n herhaalvoorskrif nodig?</string>
+    <string name="refill_maps_hint">Soek apteke rondom jou, die naaste eerste.</string>
+    <string name="refill_find_pharmacy">Vind \'n apteek naby</string>
+
+    <!-- Notifications -->
+    <string name="notif_empty_title">Nog niks nie</string>
+    <string name="notif_empty_body">Dosisherinneringe, waarskuwings oor gemiste dosisse, hervullingswaarskuwings en afspraakherinneringe sal hier verskyn.</string>
+    <string name="notif_not_delivered">%1$s · nog nie afgelewer nie</string>
+
+    <!-- Messages the app writes itself -->
+    <string name="validate_appointment_title">Gee die afspraak \'n titel.</string>
+    <string name="validate_appointment_datetime">Voer die datum in as jjjj-MM-dd en die tyd as UU:mm.</string>
+    <string name="validate_email_first">Voer eers jou e-posadres in.</string>
+    <string name="validate_name_required">Naam en van word albei benodig.</string>
+    <string name="validate_dob_format">Voer die geboortedatum in as jjjj-MM-dd, byvoorbeeld 2014-03-12.</string>
+    <string name="validate_med_name_dose">\'n naam en \'n dosishoeveelheid word albei benodig.</string>
+    <string name="validate_pack_size">Voer in hoeveel in die pak is, as \'n heelgetal.</string>
+    <string name="validate_select_dependant">Kies eers \'n afhanklike.</string>
+    <string name="validate_remaining_min">Oorblywende voorraad moet nul of meer wees.</string>
+    <string name="validate_remaining_max">Oorblywende voorraad kan nie die pakgrootte van %1$d oorskry nie.</string>
+
+    <string name="err_save">Kon nie stoor nie.</string>
+    <string name="err_save_change">Kon nie daardie verandering stoor nie.</string>
+    <string name="err_cancel_visit">Kon nie daardie besoek kanselleer nie.</string>
+    <string name="err_remove_profile">Kon nie daardie profiel verwyder nie.</string>
+    <string name="err_load_profile">Kon nie daardie profiel laai nie.</string>
+    <string name="err_load_medication">Kon nie daardie medikasie laai nie.</string>
+    <string name="err_reach_server">Kon nie die bediener bereik nie.</string>
+    <string name="err_send_reset">Kon nie die terugstel-e-pos stuur nie.</string>
+    <string name="err_schedule_not_saved">Die medikasie is gestoor, maar die skedule nie: %1$s. Voeg die skedule by vanaf die medikasielys.</string>
+
+    <string name="auth_reset_sent">As daar \'n rekening vir daardie adres bestaan, is \'n terugstelskakel op pad.</string>
+
+    <string name="settings_biometric_not_enrolled">Stel eers \'n vingerafdruk, gesig of skermslot op hierdie foon op, skakel dit dan aan.</string>
+    <string name="settings_biometric_no_hardware">Hierdie toestel het geen biometriese sensor of skermslot nie.</string>
+    <string name="settings_biometric_unavailable">Die sensor is nou nie beskikbaar nie. Probeer binnekort weer.</string>
+
+    <!-- Dose confirmations -->
+    <string name="home_msg_taken">%1$s as geneem gemerk</string>
+    <string name="home_msg_missed">%1$s as gemis gemerk</string>
+    <string name="home_msg_taken_low">%1$s as geneem gemerk — voorraad raak min, kry \'n hervulling</string>
+    <string name="home_msg_missed_low">%1$s as gemis gemerk — voorraad raak min, kry \'n hervulling</string>
+    <string name="home_msg_taken_offline">%1$s as geneem gemerk — op hierdie foon gestoor, dit sinkroniseer wanneer jy weer aanlyn is</string>
+    <string name="home_msg_missed_offline">%1$s as gemis gemerk — op hierdie foon gestoor, dit sinkroniseer wanneer jy weer aanlyn is</string>
+
+    <string name="greeting_morning">Goeiemôre</string>
+    <string name="greeting_afternoon">Goeiemiddag</string>
+    <string name="greeting_evening">Goeienaand</string>
+
+    <!-- Credential validation -->
+    <string name="validate_email_blank">Voer jou e-posadres in.</string>
+    <string name="validate_email_invalid">Daardie e-posadres lyk nie geldig nie.</string>
+    <string name="validate_password_blank">Voer jou wagwoord in.</string>
+    <string name="validate_password_short">Gebruik \'n wagwoord van ten minste %1$d karakters.</string>
+    <string name="validate_name_blank">Voer jou naam in.</string>
+    <string name="validate_passwords_differ">Die twee wagwoorde stem nie ooreen nie.</string>
+    <string name="validate_time_format">Voer elke tyd op \'n 24-uur-horlosie in, bv. 08:00.</string>
+    <string name="validate_times_distinct">Elke dosistyd moet verskil.</string>
+
+    <!-- Sign-in failures -->
+    <string name="auth_err_email_not_enabled">E-posaanmelding is nog nie vir hierdie projek geaktiveer nie. Aktiveer E-pos/Wagwoord onder Authentication in die Firebase-konsole en probeer weer.</string>
+    <string name="auth_err_email_in_use">Daar bestaan al \'n rekening vir daardie e-posadres. Probeer eerder aanmeld.</string>
+    <string name="auth_err_weak_password">Daardie wagwoord is te swak. Gebruik ten minste %1$d karakters.</string>
+    <string name="auth_err_disabled">Daardie rekening is gedeaktiveer.</string>
+    <string name="auth_err_too_many">Te veel pogings. Wag \'n paar minute en probeer weer.</string>
+    <string name="auth_err_bad_credentials">Daardie e-posadres of wagwoord is nie korrek nie.</string>
+    <string name="auth_err_network">Kon nie die bediener bereik nie. Kontroleer jou verbinding en probeer weer.</string>
+    <string name="auth_err_create_failed">Kon nie die rekening skep nie. Probeer asseblief weer.</string>
+    <string name="auth_err_login_failed">Kon nie aanmeld nie. Probeer asseblief weer.</string>
+    <string name="auth_err_no_user">Aangemeld, maar geen Firebase-gebruiker is teruggegee nie.</string>
+    <string name="auth_err_no_user_after_create">Die rekening is geskep, maar geen gebruiker is teruggegee nie.</string>
+    <string name="auth_err_no_google_account">Geen Google-rekening is op hierdie toestel beskikbaar nie. Voeg een in Instellings by en probeer weer.</string>
+    <string name="auth_err_google_refused">Google-aanmelding is geweier. Maak seker hierdie bou se SHA-1-vingerafdruk is in die Firebase-konsole geregistreer.</string>
+    <string name="auth_err_sign_in_failed">Aanmelding het misluk. Probeer asseblief weer.</string>
+
+    <!-- Failures the client words itself -->
+    <string name="api_err_network">Geen verbinding met die bediener nie. Kontroleer jou netwerk en probeer weer.</string>
+    <string name="api_err_unauthenticated">Jy is nie aangemeld nie. Meld asseblief aan en probeer weer.</string>
+    <string name="api_err_generic">Iets het verkeerd geloop. Probeer asseblief weer.</string>
+    <string name="api_err_invalid_request">Daardie versoek was nie geldig nie.</string>
+    <string name="api_err_session_expired">Jou sessie het verstryk. Meld asseblief weer aan.</string>
+    <string name="api_err_forbidden">Jy het nie toegang daartoe nie.</string>
+    <string name="api_err_not_found">Daardie rekord kon nie gevind word nie.</string>
+    <string name="api_err_conflict">Iemand anders het dit verander. Herlaai en probeer weer.</string>
+    <string name="api_err_unavailable">Die diens is tydelik nie beskikbaar nie. Probeer asseblief binnekort weer.</string>
+
+    <!-- Notification channel names, shown by Android in system Settings -->
+    <string name="channel_dose_reminder">Dosisherinneringe</string>
+    <string name="channel_dose_reminder_detail">\'n Dosis is binnekort verskuldig.</string>
+    <string name="channel_missed_dose">Gemiste dosisse</string>
+    <string name="channel_missed_dose_detail">\'n Dosis is nie as geneem aangeteken nie.</string>
+    <string name="channel_refill_alert">Hervullingswaarskuwings</string>
+    <string name="channel_refill_alert_detail">\'n Medikasie raak min.</string>
+    <string name="channel_appointment">Afspraakherinneringe</string>
+    <string name="channel_appointment_detail">\'n Afspraak is op pad.</string>
+
+    <!-- Pharmacy finder -->
+    <string name="title_pharmacy">Apteke naby</string>
+    <string name="pharmacy_find_title">Vind \'n apteek naby jou</string>
+    <string name="pharmacy_locating">Soek jou ligging…</string>
+    <string name="pharmacy_needs_permission">Hiervoor is jou benaderde ligging nodig om rondom jou te soek. Niks word by jou rekening gestoor nie.</string>
+    <string name="pharmacy_services_off">Liggingdienste is op hierdie foon afgeskakel. Skakel dit aan om naby te soek.</string>
+    <string name="pharmacy_no_fix">Jou ligging kon nie gevind word nie. Gaan na \'n plek met beter sein en probeer weer.</string>
+    <string name="pharmacy_allow_location">Laat ligging toe</string>
+    <string name="pharmacy_open_settings">Maak ligginginstellings oop</string>
+    <string name="pharmacy_privacy_note">Jou koördinate word net vir hierdie soektog gebruik.</string>
+    <string name="pharmacy_none_title">Geen apteke gevind nie</string>
+    <string name="pharmacy_none_body">Niks is binne die soekradius gevind nie. Probeer \'n wyer een.</string>
+    <string name="pharmacy_search_wider">Soek \'n wyer gebied</string>
+    <string name="pharmacy_directions">Aanwysings</string>
+    <string name="pharmacy_call">Bel</string>
+    <string name="pharmacy_from_cache">Resultate is in die laaste 24 uur gekas, so oop-tye kon verander het.</string>
+    <string name="pharmacy_err_search">Die apteeksoektog kon nie voltooi word nie. Probeer asseblief binnekort weer.</string>
+    <string name="pharmacy_no_maps_app">Geen kaarte-program is op hierdie toestel geïnstalleer nie.</string>
+    <string name="pharmacy_no_phone_app">Geen foonprogram is op hierdie toestel beskikbaar nie.</string>
+    <string name="pharmacy_no_settings_app">Ligginginstellings kon nie op hierdie toestel oopgemaak word nie.</string>
+    <plurals name="pharmacy_radius_km">
+        <item quantity="one">1 km</item>
+        <item quantity="other">%1$d km</item>
+    </plurals>
+    <plurals name="pharmacy_found">
+        <item quantity="one">1 apteek, naaste eerste</item>
+        <item quantity="other">%1$d apteke, naaste eerste</item>
+    </plurals>
+
+    <!-- Distances -->
+    <string name="distance_metres">%1$s m</string>
+    <string name="distance_kilometres">%1$s km</string>
+
+    <!-- Documents -->
+    <string name="title_documents">Dokumente</string>
+    <string name="doc_no_dependant_title">Geen afhanklike gekies nie</string>
+    <string name="doc_no_dependant_body">Kies aan wie hierdie dokumente behoort voordat jy enige byvoeg.</string>
+    <string name="doc_empty_title">Nog geen dokumente nie</string>
+    <string name="doc_empty_body">Neem \'n foto van \'n voorskrif of laai \'n laboratoriumuitslag op, en dit word hier by hierdie persoon se res van die rekords gehou.</string>
+    <string name="doc_capture">Neem \'n foto</string>
+    <string name="doc_upload_file">Laai \'n l\u00EAer op</string>
+    <string name="doc_add_title">Voeg \'n dokument by</string>
+    <string name="doc_title_label">Titel</string>
+    <string name="doc_type_label">Wat is dit?</string>
+    <string name="doc_upload">Laai op</string>
+    <string name="doc_uploaded">Dokument opgelaai</string>
+    <string name="doc_deleted">Dokument geskrap</string>
+    <string name="doc_chosen_file">%1$s · %2$s</string>
+    <string name="doc_size_and_date">%1$s · %2$s</string>
+    <string name="doc_delete_title">Skrap hierdie dokument?</string>
+    <string name="doc_delete_body">%1$s sal permanent verwyder word. Dit kan nie ongedaan gemaak word nie.</string>
+    <string name="doc_cannot_upload">Daardie l\u00EAer kan nie opgelaai word nie</string>
+
+    <!-- Document categories -->
+    <string name="doc_type_prescription">Voorskrif</string>
+    <string name="doc_type_lab_result">Laboratoriumuitslag</string>
+    <string name="doc_type_medical_report">Mediese verslag</string>
+    <string name="doc_type_other">Ander</string>
+
+    <string name="doc_err_type">Slegs foto\'s en PDF\'s kan opgelaai word — JPEG, PNG, HEIC, WebP of PDF.</string>
+    <string name="doc_err_too_large">L\u00EAers mag hoogstens %1$d MB wees. Probeer die bladsy weer teen \'n laer kwaliteit afneem.</string>
+    <string name="doc_err_title_required">Gee die dokument \'n titel sodat dit later gevind kan word.</string>
+    <string name="doc_err_unreadable">Daardie l\u00EAer kon nie gelees word nie. Probeer dit weer kies.</string>
+    <string name="doc_err_no_link">Daardie dokument kon nie nou oopgemaak word nie. Probeer asseblief binnekort weer.</string>
+    <string name="doc_err_no_camera">Geen kameraprogram is op hierdie toestel beskikbaar nie.</string>
+    <string name="doc_err_no_viewer">Geen program op hierdie toestel kan daardie l\u00EAertipe oopmaak nie.</string>
+    <string name="doc_err_generic">Iets het met daardie dokument verkeerd geloop. Probeer asseblief weer.</string>
+
+    <string name="action_ok">Goed</string>
+
+    <!-- Shared states -->
+    <string name="state_retry">Probeer weer</string>
+    <string name="state_error_title">Iets het verkeerd geloop</string>
+    <string name="state_error_body">Probeer asseblief weer.</string>
+    <string name="state_error_reference">Verwysing: %1$s</string>
+
+    <!-- Firebase configuration -->
+    <string name="firebase_not_configured">Firebase is nie opgestel nie</string>
+</resources>

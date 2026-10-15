@@ -1,0 +1,47 @@
+# ---- Build output ----
+*.iml
+.gradle/
+build/
+app/build/
+captures/
+.externalNativeBuild/
+.cxx/
+
+# ---- Machine-specific ----
+# Contains the SDK path for whoever's machine this is. Android Studio regenerates it on first
+# open, so it must never be committed — a hard-coded path from someone else's laptop is one of
+# the most common reasons a cloned Android project will not build.
+local.properties
+
+# ---- Secrets ----
+# Generated per Firebase project. Keeping it out of the repository means the API keys inside are
+# not published; each developer downloads their own from the Firebase console.
+google-services.json
+app/google-services.json
+
+# Signing material for a RELEASE build. Losing control of these means someone else can publish
+# an update to the app, so they stay out of version control without exception.
+*.jks
+*.keystore
+keystore.properties
+signing.properties
+
+# ...with one deliberate exception. The shared DEBUG keystore is committed so that every
+# developer's build and every CI run carry the same SHA-1 fingerprint, which is what Google
+# Sign-In authorises against. Without it each machine signs with its own generated key and only
+# one of us could ever sign in. It is a debug key with the well-known default password; it can
+# sign nothing that installs over a real release.
+!keystore/techies-debug.keystore
+
+# ---- IDE ----
+.idea/
+!.idea/codeStyles/
+!.idea/inspectionProfiles/
+*.hprof
+
+# ---- OS ----
+.DS_Store
+Thumbs.db
+
+# Kotlin build session directory
+.kotlin/

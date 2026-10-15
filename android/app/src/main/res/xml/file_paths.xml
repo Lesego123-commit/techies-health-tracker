@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Where the FileProvider will hand out URIs from.
+
+    Only the one cache subdirectory captures are written to. A provider that exposed the whole
+    cache, or files/, would let any app granted a URI reach further than the single photo it was
+    given access to.
+-->
+<paths>
+    <cache-path name="captures" path="captures/" />
+</paths>

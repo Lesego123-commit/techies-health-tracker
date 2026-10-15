@@ -1,0 +1,496 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    isiZulu (Requirement 7).
+
+    Translated for meaning rather than literally. isiZulu builds many of these ideas differently
+    from English — "Mark taken" is rendered as an instruction to the reader rather than a label,
+    and the noun-class agreement changes with the noun, so several strings could not simply reuse
+    a stem.
+
+    These need review by a first-language isiZulu speaker before submission. The developer is not
+    one, and on a medication app an unchecked translation is a real risk rather than a cosmetic
+    one. Where a term had no settled everyday equivalent — "biometric", "sync" — the widely
+    understood English term has been kept rather than inventing one.
+-->
+<resources>
+    <string name="app_tagline">Ukuphathwa kwemithi nokunakekelwa</string>
+
+    <!-- Navigation -->
+    <string name="nav_home">Ikhaya</string>
+    <string name="nav_meds">Imithi</string>
+    <string name="nav_trends">Ukuthambekela</string>
+    <string name="nav_appointments">Ama-apoyintimenti</string>
+    <string name="nav_more">Okunye</string>
+
+    <string name="title_today">Namuhla</string>
+    <string name="title_dependants">Abathembele kuwe</string>
+    <string name="title_adherence">Ukunamathela</string>
+    <string name="title_appointments">Ama-apoyintimenti</string>
+    <string name="title_settings">Izilungiselelo</string>
+    <string name="title_notifications">Izaziso</string>
+    <string name="title_refill_forecast">Isibikezelo sokugcwalisa</string>
+    <string name="title_add_medication">Engeza umuthi</string>
+    <string name="title_edit_medication">Hlela umuthi</string>
+    <string name="title_edit_profile">Hlela iphrofayela</string>
+
+    <string name="action_back">Emuva</string>
+    <string name="action_notifications">Izaziso</string>
+    <string name="action_add_medication">Engeza umuthi</string>
+
+    <!-- Sign in -->
+    <string name="auth_log_in">Ngena</string>
+    <string name="auth_create_account">Dala i-akhawunti</string>
+    <string name="auth_email">Ikheli le-imeyili</string>
+    <string name="auth_password">Iphasiwedi</string>
+    <string name="auth_confirm_password">Qinisekisa iphasiwedi</string>
+    <string name="auth_full_name">Igama eligcwele</string>
+    <string name="auth_password_hint">Okungenani izinhlamvu eziyisithupha.</string>
+    <string name="auth_show">Bonisa</string>
+    <string name="auth_hide">Fihla</string>
+    <string name="auth_forgot_password">Ukhohlwe iphasiwedi yakho?</string>
+    <string name="auth_or">noma</string>
+    <string name="auth_continue_with_google">G   Qhubeka nge-Google</string>
+    <string name="auth_secured_by_firebase">Kuvikelwe yi-Firebase Authentication</string>
+
+    <!-- Biometric lock -->
+    <string name="lock_title">Kukhiyiwe</string>
+    <string name="lock_verify">Qinisekisa ukuthi nguwe ukuze uvule i-Techies Health Tracker.</string>
+    <string name="lock_not_enrolled">Ukuvula nge-biometric kuvuliwe kule akhawunti, kodwa akukho zigxivizo zeminwe noma ubuso obulungiselelwe kule foni.</string>
+    <string name="lock_unavailable">Inzwa ayitholakali okwamanje. Zama futhi maduze.</string>
+    <string name="lock_unlock">Vula</string>
+    <string name="lock_open_settings">Vula izilungiselelo zokuphepha</string>
+    <string name="lock_sign_out_instead">Phuma kunalokho</string>
+    <string name="lock_prompt_title">Vula i-Techies Health Tracker</string>
+    <string name="lock_prompt_subtitle">Qinisekisa ukuthi nguwe ukuze ubone imininingwane yemithi</string>
+
+    <!-- Home -->
+    <string name="home_todays_doses">IMITHAMO YANAMUHLA</string>
+    <string name="home_dependants">ABATHEMBELE KUWE</string>
+    <string name="home_adherence_streak">UCHUNGECHUNGE LOKUNAMATHELA</string>
+    <string name="home_mark_taken">MAKA NJENGOTHATHIWE</string>
+    <string name="home_missed">KUPHUTHELWE</string>
+    <string name="home_add">Engeza</string>
+    <string name="home_open">Vula</string>
+    <string name="home_no_one_title">Akukho muntu okulandelwayo okwamanje</string>
+    <string name="home_no_one_body">Engeza umuntu omphathela imithi ukuze uqale.</string>
+    <string name="home_add_dependant">Engeza othembele kuwe</string>
+    <string name="home_no_medications">Ayikho imithi ehleliwe okwamanje. Engeza eyodwa kuthebhu yeMithi.</string>
+    <string name="home_doses_left">%1$d esele</string>
+    <string name="home_streak_badge">%1$s ⭐</string>
+    <string name="home_adherence_window">Ukunamathela okungu-%1$s ezinsukwini ezingu-30 ezedlule</string>
+
+    <!-- Offline and sync -->
+    <string name="sync_offline">Awukho ku-inthanethi</string>
+    <string name="sync_offline_saved">Awukho ku-inthanethi — kulondolozwe kule foni</string>
+    <string name="sync_waiting">Kulindwe ukuvumelanisa</string>
+    <string name="sync_in_progress">Iyavumelanisa…</string>
+    <string name="sync_now">Vumelanisa manje</string>
+    <string name="sync_none_pending">Imithamo oyibhalayo manje igcinwa kuze kube ubuyela ku-inthanethi.</string>
+    <plurals name="sync_pending">
+        <item quantity="one">Umthamo owodwa uzothunyelwa uma usubuyele ku-inthanethi.</item>
+        <item quantity="other">Imithamo engu-%1$d izothunyelwa uma usubuyele ku-inthanethi.</item>
+    </plurals>
+
+    <!-- Settings -->
+    <string name="settings_preferences">OKUNCAMELAYO</string>
+    <string name="settings_notifications">IZAZISO</string>
+    <string name="settings_medication_stock">ISITOKO SEMITHI</string>
+    <string name="settings_security">UKUPHEPHA</string>
+    <string name="settings_language">Ulimi</string>
+    <string name="settings_language_detail">Lusetshenziselwa uhlelo nezikhumbuzo ezithunyelwa yiseva.</string>
+    <string name="settings_dark_mode">Imodi emnyama</string>
+    <string name="settings_following_phone">Ilandela isilungiselelo sefoni uqobo.</string>
+    <string name="settings_push">Izaziso ezidluliselwayo</string>
+    <string name="settings_push_detail">Vala lokhu ukuze umise ukulethwa. Izenzakalo zisaqoshwa futhi zihlala zibonakala ngaphansi kwensimbi.</string>
+    <string name="settings_reminder_lead">Ngikhumbuze ngaphambi komthamo</string>
+    <string name="settings_quiet_hours">Amahora athule</string>
+    <string name="settings_quiet_hours_off">Kuvaliwe — izikhumbuzo zingafika nganoma yiliphi ihora.</string>
+    <string name="settings_quiet_hours_on">%1$s – %2$s. Izikhumbuzo ezivela kulesi sikhathi ziyabanjwa, azilahlwa.</string>
+    <string name="settings_low_stock">Ngixwayise uma isitoko sehla ngaphansi kuka</string>
+    <string name="settings_low_stock_detail">Kuqhuba isibikezelo sokugcwalisa nezexwayiso zesitoko esiphansi.</string>
+    <string name="settings_biometric">Ukuvula nge-biometric</string>
+    <string name="settings_biometric_detail">Cela isigxivizo somunwe, ubuso noma ukukhiya kwesikrini njalo uma uhlelo luvulwa.</string>
+    <string name="settings_sign_out">Phuma</string>
+    <string name="settings_stored_on_account">Okuncamelayo kugcinwa ku-akhawunti yakho kunokuba kugcinwe kule foni, ngakho kukulandela kwidivayisi entsha.</string>
+    <string name="settings_signed_in">Ungenile</string>
+    <string name="settings_saved">Kulondoloziwe</string>
+
+    <!--
+        Dose timing. isiZulu marks the quantity on the noun itself — "umzuzu" for one minute,
+        "imizuzu" for several — so these could not be built from one stem with a number in front of
+        it, which is exactly why they are plurals rather than a single string.
+    -->
+    <string name="dose_none_scheduled">Awukho umthamo ohleliwe</string>
+    <string name="dose_due_now">Kufanele umanje</string>
+    <string name="dose_on_date">Ngo-%1$s</string>
+    <plurals name="dose_in_minutes">
+        <item quantity="one">Emzuzwini owodwa</item>
+        <item quantity="other">Emizuzwini engu-%1$d</item>
+    </plurals>
+    <plurals name="dose_in_hours">
+        <item quantity="one">Ehoreni elilodwa</item>
+        <item quantity="other">Emahoreni angu-%1$d</item>
+    </plurals>
+    <plurals name="dose_overdue_minutes">
+        <item quantity="one">Sekudlule umzuzu owodwa</item>
+        <item quantity="other">Sekudlule imizuzu engu-%1$d</item>
+    </plurals>
+    <plurals name="dose_overdue_hours">
+        <item quantity="one">Sekudlule ihora elilodwa</item>
+        <item quantity="other">Sekudlule amahora angu-%1$d</item>
+    </plurals>
+    <plurals name="dose_overdue_days">
+        <item quantity="one">Sekudlule usuku olulodwa</item>
+        <item quantity="other">Sekudlule izinsuku ezingu-%1$d</item>
+    </plurals>
+
+    <!-- Streaks and reminder lead times -->
+    <string name="streak_none">Alukho uchungechunge okwamanje</string>
+    <plurals name="streak_days">
+        <item quantity="one">Uchungechunge losuku olulodwa</item>
+        <item quantity="other">Uchungechunge lwezinsuku ezingu-%1$d</item>
+    </plurals>
+    <plurals name="lead_time_days">
+        <item quantity="one">Usuku olulodwa</item>
+        <item quantity="other">Izinsuku ezingu-%1$d</item>
+    </plurals>
+    <plurals name="lead_time_hours">
+        <item quantity="one">Ihora elilodwa</item>
+        <item quantity="other">Amahora angu-%1$d</item>
+    </plurals>
+    <plurals name="lead_time_minutes">
+        <item quantity="one">Umzuzu owodwa</item>
+        <item quantity="other">Imizuzu engu-%1$d</item>
+    </plurals>
+
+    <!-- Appointments -->
+    <string name="appt_no_dependant_title">Akukho othembele kuwe okhethiwe</string>
+    <string name="appt_no_dependant_body">Engeza othembele kuwe ngaphambi kokubhuka ama-apoyintimenti.</string>
+    <string name="appt_none_title">Awekho ama-apoyintimenti okwamanje</string>
+    <string name="appt_none_body">Engeza ukuvakasha kudokotela noma ukuhlolwa futhi kuzovela lapha, nesikhumbuzo ngaphambi kwesikhathi.</string>
+    <string name="appt_add">Engeza i-apoyintimenti</string>
+    <string name="appt_upcoming">EZIZAYO</string>
+    <string name="appt_past">EZEDLULE</string>
+    <string name="appt_when_with_reminder">%1$s · Isikhumbuzo %2$s ngaphambili</string>
+    <string name="appt_cancelled">Kukhanseliwe</string>
+    <string name="appt_cancel_visit">Khansela ukuvakasha</string>
+    <string name="appt_title_label">Isihloko</string>
+    <string name="appt_location_label">Indawo (okukhethwa kukho)</string>
+    <string name="appt_remind_me">Ngikhumbuze</string>
+    <string name="appt_date_label">Usuku</string>
+    <string name="appt_time_label">Isikhathi</string>
+
+    <!-- Form actions -->
+    <string name="action_save">Londoloza</string>
+    <string name="action_cancel">Khansela</string>
+    <string name="action_delete">Susa</string>
+
+    <!-- Trends and adherence -->
+    <string name="trends_no_dependant_title">Akukho othembele kuwe okhethiwe</string>
+    <string name="trends_no_dependant_body">Engeza othembele kuwe ukuze uqale ukulandelela ukunamathela.</string>
+    <string name="trends_empty_title">Akukho okuboniswayo okwamanje</string>
+    <string name="trends_empty_body">Ukunamathela kuvela lapho imithi inezinhlelo futhi imithamo iqoshwa.</string>
+    <string name="trends_adherence">ukunamathela</string>
+    <string name="trends_daily_breakdown">Ukuhlukaniswa kwansuku zonke</string>
+    <string name="trends_recent_doses">Imithamo yakamuva</string>
+    <string name="trends_pattern">Iphethini</string>
+    <string name="trends_stat_taken">Kuthathiwe</string>
+    <string name="trends_stat_missed">Kuphuthelwe</string>
+    <string name="trends_stat_scheduled">Kuhleliwe</string>
+    <string name="trends_stat_streak">Uchungechunge</string>
+
+    <!-- Dose statuses -->
+    <string name="dose_status_taken">Kuthathiwe</string>
+    <string name="dose_status_missed">Kuphuthelwe</string>
+    <string name="dose_status_skipped">Kweqiwe</string>
+    <string name="dose_status_pending">Kusalindile</string>
+
+    <plurals name="days_count">
+        <item quantity="one">Usuku olulodwa</item>
+        <item quantity="other">Izinsuku ezingu-%1$d</item>
+    </plurals>
+
+    <!-- Dependants -->
+    <string name="dep_none_title">Abakho abathembele kuwe okwamanje</string>
+    <string name="dep_none_body">Engeza umuntu omphathela imithi. Ungangeza ngaphezu koyedwa, futhi ngamunye unemithi nohlelo lwakhe.</string>
+    <string name="dep_add">Engeza othembele kuwe</string>
+    <string name="dep_add_another">Engeza omunye othembele kuwe</string>
+    <string name="dep_relationship_and_age">%1$s · uneminyaka engu-%2$d</string>
+    <string name="dep_no_active_medications">Ayikho imithi esebenzayo</string>
+    <plurals name="dep_active_medications">
+        <item quantity="one">Umuthi owodwa osebenzayo</item>
+        <item quantity="other">Imithi engu-%1$d esebenzayo</item>
+    </plurals>
+    <string name="dep_viewing">Kubukwa</string>
+
+    <!-- Relationship vocabulary -->
+    <string name="relationship_child">Ingane</string>
+    <string name="relationship_parent">Umzali</string>
+    <string name="relationship_spouse">Umlingani</string>
+    <string name="relationship_self">Mina</string>
+    <string name="relationship_other">Okunye</string>
+
+    <!-- Form fields -->
+    <string name="field_first_name">Igama</string>
+    <string name="field_last_name">Isibongo</string>
+    <string name="field_date_of_birth">Usuku lokuzalwa</string>
+    <string name="field_dob_hint">Iseva ibala iminyaka kusukela kulokhu.</string>
+    <string name="field_relationship">Ubudlelwano</string>
+    <string name="field_selected">Okukhethiwe: %1$s</string>
+    <string name="field_allergies">Ukungezwani nemithi (okukhethwa kukho)</string>
+    <string name="field_allergies_hint">Kuboniswa phezulu kuphrofayela, lapho kungenakuphuthelwa.</string>
+    <string name="field_medical_aid">Inombolo yomshwalense wezempilo (okukhethwa kukho)</string>
+    <string name="action_save_changes">Londoloza izinguquko</string>
+    <string name="action_edit">Hlela</string>
+    <string name="action_open">Vula</string>
+
+    <!-- Dependant profile -->
+    <string name="profile_age">%1$d iminyaka</string>
+    <string name="profile_dob">Uzalwe %1$s</string>
+    <string name="profile_medical_aid">Umshwalense wezempilo %1$s</string>
+    <string name="profile_allergies">Ukungezwani nemithi</string>
+    <string name="profile_active_medications">IMITHI ESEBENZAYO</string>
+    <string name="profile_appointments">AMA-APOYINTIMENTI</string>
+    <string name="profile_documents">AMADOKHUMENTI</string>
+    <string name="profile_no_medications">Ayikho imithi esebenzayo. Engeza eyodwa ngenkinobho +.</string>
+    <string name="profile_view_refill">Buka isibikezelo sokugcwalisa</string>
+    <string name="profile_no_appointments">Awekho ama-apoyintimenti azayo.</string>
+    <string name="profile_no_documents">Awekho amadokhumenti agcinelwe lo muntu okwamanje.</string>
+    <string name="profile_manage_documents">Phatha amadokhumenti</string>
+    <string name="profile_remaining">%1$d kwangu-%2$d osele</string>
+    <string name="profile_document_size">%1$s · %2$d KB</string>
+    <plurals name="profile_times_daily">
+        <item quantity="one">kanye ngosuku</item>
+        <item quantity="other">izikhathi ezingu-%1$d ngosuku</item>
+    </plurals>
+
+    <!-- Stock severity -->
+    <string name="stock_out">Isitoko siphelile</string>
+    <string name="stock_low">Isitoko siphansi</string>
+    <string name="stock_active">Kuyasebenza</string>
+
+    <!-- Medication form -->
+    <string name="med_name">Igama lomuthi</string>
+    <string name="med_dose">Umthamo</string>
+    <string name="med_pack_size">Ubukhulu bephakethe</string>
+    <string name="med_remaining">Isitoko esisele</string>
+    <string name="med_remaining_hint">Lungisa lokhu ngemva kwesikweletu esiphindwayo. Ukuqopha umthamo njengothathiwe kuwunciphisa ngokuzenzakalela.</string>
+    <string name="med_unit">Iyunithi</string>
+    <string name="med_form">Uhlobo</string>
+    <string name="med_schedule">Uhlelo</string>
+    <string name="med_dose_time">Isikhathi somthamo %1$d</string>
+    <string name="med_times_hint">Izikhathi zisewashini lamahora angu-24, ngesikhathi sendawo yakho. Iseva ibala ukuthi umthamo ngamunye ufanele nini ngempela.</string>
+    <string name="med_instructions">Imiyalelo (okukhethwa kukho)</string>
+    <string name="med_instructions_placeholder">Thatha nokudla</string>
+    <string name="med_save">Londoloza umuthi</string>
+    <string name="med_schedule_locked">Izikhathi zomthamo azinakushintshwa lapha: ukunamathela osekuqoshwe kwakalwa ngazo. Yeka lo muthi bese uwungeza futhi ukuze udlulele ohlelweni olusha.</string>
+
+    <string name="freq_once_daily">Kanye ngosuku</string>
+    <string name="freq_twice_daily">Kabili ngosuku</string>
+    <string name="freq_three_times_daily">Kathathu ngosuku</string>
+
+    <!-- Dosage units -->
+    <string name="unit_tablets">amaphilisi</string>
+    <string name="unit_puffs">ukufutha</string>
+    <string name="unit_drops">amaconsi</string>
+
+    <string name="form_tablet">Iphilisi</string>
+    <string name="form_capsule">Ikhapsula</string>
+    <string name="form_liquid">Uketshezi</string>
+    <string name="form_injection">Umjovo</string>
+    <string name="form_inhaler">I-inhaler</string>
+    <string name="form_drops">Amaconsi</string>
+
+    <!-- Refill forecast -->
+    <string name="refill_no_dependant_title">Akukho othembele kuwe okhethiwe</string>
+    <string name="refill_no_dependant_body">Engeza othembele kuwe nemithi yakhe ukuze ubone izibikezelo zokugcwalisa.</string>
+    <string name="refill_empty_title">Akukho okubikezelwayo</string>
+    <string name="refill_empty_body">Izibikezelo zokugcwalisa zivela lapho umuthi unohlelo olusebenzayo.</string>
+    <string name="refill_all_ok">Yonke imithi inesitoko esanele</string>
+    <plurals name="refill_alerts">
+        <item quantity="one">Umuthi owodwa udinga ukugcwaliswa</item>
+        <item quantity="other">Imithi engu-%1$d idinga ukugcwaliswa</item>
+    </plurals>
+    <string name="refill_nearest_pharmacy">IKHEMISI ELISEDUZE</string>
+    <string name="refill_days_left">izinsuku ezisele</string>
+    <string name="refill_no_schedule_short">alukho uhlelo</string>
+    <string name="refill_runs_out">Uzophela cishe ngo-%1$s</string>
+    <string name="refill_usage">Kusetshenziswa cishe okungu-%1$s ngosuku</string>
+    <string name="refill_no_schedule_body">Alukho uhlelo olusebenzayo, ngakho akukho usuku lokuphela olungabikezelwa.</string>
+    <string name="refill_out_of_stock">Isitoko siphelile — hlela isikweletu esiphindwayo</string>
+    <string name="refill_below_threshold">Ngaphansi komkhawulo wakho wezinsuku ezingu-%1$d</string>
+    <string name="refill_repeat_prescription">Udinga isikweletu esiphindwayo?</string>
+    <string name="refill_maps_hint">Kusesha amakhemisi aseduze nawe, aseduze kuqala.</string>
+    <string name="refill_find_pharmacy">Thola ikhemisi eliseduze</string>
+
+    <!-- Notifications -->
+    <string name="notif_empty_title">Akukho lutho okwamanje</string>
+    <string name="notif_empty_body">Izikhumbuzo zemithamo, izexwayiso zemithamo ephuthelwe, izexwayiso zokugcwalisa nezikhumbuzo zama-apoyintimenti zizovela lapha.</string>
+    <string name="notif_not_delivered">%1$s · akukalethwa</string>
+
+    <!-- Messages the app writes itself -->
+    <string name="validate_appointment_title">Nika i-apoyintimenti isihloko.</string>
+    <string name="validate_appointment_datetime">Faka usuku ngendlela ethi yyyy-MM-dd nesikhathi ngendlela ethi HH:mm.</string>
+    <string name="validate_email_first">Faka ikheli lakho le-imeyili kuqala.</string>
+    <string name="validate_name_required">Igama nesibongo kuyadingeka kokubili.</string>
+    <string name="validate_dob_format">Faka usuku lokuzalwa ngendlela ethi yyyy-MM-dd, isibonelo 2014-03-12.</string>
+    <string name="validate_med_name_dose">Igama nenani lomthamo kuyadingeka kokubili.</string>
+    <string name="validate_pack_size">Faka ukuthi mangaki aphaketheni, njengenombolo ephelele.</string>
+    <string name="validate_select_dependant">Khetha othembele kuwe kuqala.</string>
+    <string name="validate_remaining_min">Isitoko esisele kufanele sibe ngu-zero noma ngaphezulu.</string>
+    <string name="validate_remaining_max">Isitoko esisele ngeke sedlule ubukhulu bephakethe obungu-%1$d.</string>
+
+    <string name="err_save">Ayikwazanga ukulondoloza.</string>
+    <string name="err_save_change">Ayikwazanga ukulondoloza lolo shintsho.</string>
+    <string name="err_cancel_visit">Ayikwazanga ukukhansela lokho kuvakasha.</string>
+    <string name="err_remove_profile">Ayikwazanga ukususa leyo phrofayela.</string>
+    <string name="err_load_profile">Ayikwazanga ukulayisha leyo phrofayela.</string>
+    <string name="err_load_medication">Ayikwazanga ukulayisha lowo muthi.</string>
+    <string name="err_reach_server">Ayikwazanga ukufinyelela iseva.</string>
+    <string name="err_send_reset">Ayikwazanga ukuthumela i-imeyili yokusetha kabusha.</string>
+    <string name="err_schedule_not_saved">Umuthi ulondolozwe, kodwa uhlelo lwawo alulondolozwanga: %1$s. Engeza uhlelo kusukela ohlwini lwemithi.</string>
+
+    <string name="auth_reset_sent">Uma kukhona i-akhawunti yalelo kheli, isixhumanisi sokusetha kabusha siyeza.</string>
+
+    <string name="settings_biometric_not_enrolled">Lungiselela isigxivizo somunwe, ubuso noma ukukhiya kwesikrini kule foni kuqala, bese uvula lokhu.</string>
+    <string name="settings_biometric_no_hardware">Le divayisi ayinazwa ye-biometric noma ukukhiya kwesikrini.</string>
+    <string name="settings_biometric_unavailable">Inzwa ayitholakali njengamanje. Zama futhi maduze.</string>
+
+    <!-- Dose confirmations -->
+    <string name="home_msg_taken">%1$s umakwe njengothathiwe</string>
+    <string name="home_msg_missed">%1$s umakwe njengophuthelwe</string>
+    <string name="home_msg_taken_low">%1$s umakwe njengothathiwe — isitoko siyaphela, hlela ukugcwalisa</string>
+    <string name="home_msg_missed_low">%1$s umakwe njengophuthelwe — isitoko siyaphela, hlela ukugcwalisa</string>
+    <string name="home_msg_taken_offline">%1$s umakwe njengothathiwe — kulondolozwe kule foni, kuzovumelaniswa uma usubuyele ku-inthanethi</string>
+    <string name="home_msg_missed_offline">%1$s umakwe njengophuthelwe — kulondolozwe kule foni, kuzovumelaniswa uma usubuyele ku-inthanethi</string>
+
+    <string name="greeting_morning">Sawubona ekuseni</string>
+    <string name="greeting_afternoon">Sawubona emini</string>
+    <string name="greeting_evening">Sawubona kusihlwa</string>
+
+    <!-- Credential validation -->
+    <string name="validate_email_blank">Faka ikheli lakho le-imeyili.</string>
+    <string name="validate_email_invalid">Lelo kheli le-imeyili alibukeki lilungile.</string>
+    <string name="validate_password_blank">Faka iphasiwedi yakho.</string>
+    <string name="validate_password_short">Sebenzisa iphasiwedi enezinhlamvu okungenani ezingu-%1$d.</string>
+    <string name="validate_name_blank">Faka igama lakho.</string>
+    <string name="validate_passwords_differ">Amaphasiwedi amabili awafani.</string>
+    <string name="validate_time_format">Faka isikhathi ngasinye ngewashi lamahora angu-24, isib. 08:00.</string>
+    <string name="validate_times_distinct">Isikhathi ngasinye somthamo kufanele sihluke.</string>
+
+    <!-- Sign-in failures -->
+    <string name="auth_err_email_not_enabled">Ukungena nge-imeyili akukavulwa kule phrojekthi. Vula i-Email/Password ngaphansi kwe-Authentication kukhonsoli ye-Firebase, bese uzame futhi.</string>
+    <string name="auth_err_email_in_use">Sekukhona i-akhawunti yalelo kheli le-imeyili. Zama ukungena kunalokho.</string>
+    <string name="auth_err_weak_password">Leyo phasiwedi ibuthakathaka kakhulu. Sebenzisa okungenani izinhlamvu ezingu-%1$d.</string>
+    <string name="auth_err_disabled">Leyo akhawunti ivaliwe.</string>
+    <string name="auth_err_too_many">Imizamo eminingi kakhulu. Linda imizuzu embalwa bese uzama futhi.</string>
+    <string name="auth_err_bad_credentials">Lelo kheli le-imeyili noma iphasiwedi ayilungile.</string>
+    <string name="auth_err_network">Ayikwazanga ukufinyelela iseva. Hlola ukuxhumeka kwakho bese uzama futhi.</string>
+    <string name="auth_err_create_failed">Ayikwazanga ukudala i-akhawunti. Sicela uzame futhi.</string>
+    <string name="auth_err_login_failed">Ayikwazanga ukungena. Sicela uzame futhi.</string>
+    <string name="auth_err_no_user">Ungenile, kodwa akukho msebenzisi we-Firebase obuyisiwe.</string>
+    <string name="auth_err_no_user_after_create">I-akhawunti idalwe, kodwa akukho msebenzisi obuyisiwe.</string>
+    <string name="auth_err_no_google_account">Ayikho i-akhawunti ye-Google etholakalayo kule divayisi. Engeza eyodwa kuZilungiselelo bese uzama futhi.</string>
+    <string name="auth_err_google_refused">Ukungena nge-Google kwenqatshwe. Hlola ukuthi isigxivizo se-SHA-1 salesi sakhiwo sibhalisiwe kukhonsoli ye-Firebase.</string>
+    <string name="auth_err_sign_in_failed">Ukungena kuhlulekile. Sicela uzame futhi.</string>
+
+    <!-- Failures the client words itself -->
+    <string name="api_err_network">Akukho ukuxhumana neseva. Hlola inethiwekhi yakho bese uzama futhi.</string>
+    <string name="api_err_unauthenticated">Awungenile. Sicela ungene bese uzama futhi.</string>
+    <string name="api_err_generic">Kukhona okungahambanga kahle. Sicela uzame futhi.</string>
+    <string name="api_err_invalid_request">Leso sicelo besingalungile.</string>
+    <string name="api_err_session_expired">Iseshini yakho iphelelwe yisikhathi. Sicela ungene futhi.</string>
+    <string name="api_err_forbidden">Awunalo ilungelo lokufinyelela lokho.</string>
+    <string name="api_err_not_found">Lowo mbhalo awutholakalanga.</string>
+    <string name="api_err_conflict">Omunye umuntu ushintshe lokhu. Vuselela bese uzama futhi.</string>
+    <string name="api_err_unavailable">Insizakalo ayitholakali okwesikhashana. Sicela uzame futhi maduze.</string>
+
+    <!-- Notification channel names, shown by Android in system Settings -->
+    <string name="channel_dose_reminder">Izikhumbuzo zemithamo</string>
+    <string name="channel_dose_reminder_detail">Umthamo ufanele maduze.</string>
+    <string name="channel_missed_dose">Imithamo ephuthelwe</string>
+    <string name="channel_missed_dose_detail">Umthamo awuqoshwanga njengothathiwe.</string>
+    <string name="channel_refill_alert">Izexwayiso zokugcwalisa</string>
+    <string name="channel_refill_alert_detail">Umuthi uyaphela.</string>
+    <string name="channel_appointment">Izikhumbuzo zama-apoyintimenti</string>
+    <string name="channel_appointment_detail">Kukhona i-apoyintimenti ezayo.</string>
+
+    <!-- Pharmacy finder -->
+    <string name="title_pharmacy">Amakhemisi aseduze</string>
+    <string name="pharmacy_find_title">Thola ikhemisi eliseduze nawe</string>
+    <string name="pharmacy_locating">Kutholwa indawo okuyo…</string>
+    <string name="pharmacy_needs_permission">Lokhu kudinga indawo yakho engaqondile ukuze kusesheke eduze nawe. Akukho okugcinwa ku-akhawunti yakho.</string>
+    <string name="pharmacy_services_off">Izinsizakalo zendawo zivaliwe kule foni. Zivule ukuze usesheke eduze.</string>
+    <string name="pharmacy_no_fix">Indawo yakho ayitholakalanga. Yiya lapho kunesignali engcono bese uzama futhi.</string>
+    <string name="pharmacy_allow_location">Vumela indawo</string>
+    <string name="pharmacy_open_settings">Vula izilungiselelo zendawo</string>
+    <string name="pharmacy_privacy_note">Ama-coordinates akho asetshenziselwa lolu sesho kuphela.</string>
+    <string name="pharmacy_none_title">Awekho amakhemisi atholakele</string>
+    <string name="pharmacy_none_body">Akukho okutholakele ngaphakathi kwebanga lokusesha. Zama elibanzi.</string>
+    <string name="pharmacy_search_wider">Sesha indawo ebanzi</string>
+    <string name="pharmacy_directions">Izikhombisi-ndlela</string>
+    <string name="pharmacy_call">Shayela</string>
+    <string name="pharmacy_from_cache">Imiphumela igcinwe emahoreni angu-24 edlule, ngakho izikhathi zokuvula kungenzeka zishintshile.</string>
+    <string name="pharmacy_err_search">Ukusesha ikhemisi akuqedwanga. Sicela uzame futhi maduze.</string>
+    <string name="pharmacy_no_maps_app">Alukho uhlelo lwamamephu olufakiwe kule divayisi.</string>
+    <string name="pharmacy_no_phone_app">Alukho uhlelo lwefoni olutholakalayo kule divayisi.</string>
+    <string name="pharmacy_no_settings_app">Izilungiselelo zendawo azikwazanga ukuvulwa kule divayisi.</string>
+    <plurals name="pharmacy_radius_km">
+        <item quantity="one">1 km</item>
+        <item quantity="other">%1$d km</item>
+    </plurals>
+    <plurals name="pharmacy_found">
+        <item quantity="one">Ikhemisi elilodwa, eliseduze kuqala</item>
+        <item quantity="other">Amakhemisi angu-%1$d, aseduze kuqala</item>
+    </plurals>
+
+    <!-- Distances -->
+    <string name="distance_metres">%1$s m</string>
+    <string name="distance_kilometres">%1$s km</string>
+
+    <!-- Documents -->
+    <string name="title_documents">Amadokhumenti</string>
+    <string name="doc_no_dependant_title">Akukho othembele kuwe okhethiwe</string>
+    <string name="doc_no_dependant_body">Khetha ukuthi la madokhumenti angakabani ngaphambi kokungeza noma yiliphi.</string>
+    <string name="doc_empty_title">Awekho amadokhumenti okwamanje</string>
+    <string name="doc_empty_body">Thwebula isithombe sesikweletu somuthi noma ulayishe umphumela welabhorethri, futhi kuzogcinwa lapha kanye nawo wonke amanye amarekhodi alo muntu.</string>
+    <string name="doc_capture">Thatha isithombe</string>
+    <string name="doc_upload_file">Layisha ifayela</string>
+    <string name="doc_add_title">Engeza idokhumenti</string>
+    <string name="doc_title_label">Isihloko</string>
+    <string name="doc_type_label">Kuyini lokhu?</string>
+    <string name="doc_upload">Layisha</string>
+    <string name="doc_uploaded">Idokhumenti ilayishiwe</string>
+    <string name="doc_deleted">Idokhumenti isusiwe</string>
+    <string name="doc_chosen_file">%1$s · %2$s</string>
+    <string name="doc_size_and_date">%1$s · %2$s</string>
+    <string name="doc_delete_title">Susa leli dokhumenti?</string>
+    <string name="doc_delete_body">I-%1$s izosuswa unomphela. Lokhu ngeke kubuyiselwe emuva.</string>
+    <string name="doc_cannot_upload">Lelo fayela ngeke lilayishwe</string>
+
+    <!-- Document categories -->
+    <string name="doc_type_prescription">Isikweletu somuthi</string>
+    <string name="doc_type_lab_result">Umphumela welabhorethri</string>
+    <string name="doc_type_medical_report">Umbiko wezempilo</string>
+    <string name="doc_type_other">Okunye</string>
+
+    <string name="doc_err_type">Yizithombe kanye nama-PDF kuphela angalayishwa — i-JPEG, PNG, HEIC, WebP noma PDF.</string>
+    <string name="doc_err_too_large">Amafayela angaba ngu-%1$d MB vo. Zama ukuthwebula ikhasi futhi ngekhwalithi ephansi.</string>
+    <string name="doc_err_title_required">Nika idokhumenti isihloko ukuze litholakale kamuva.</string>
+    <string name="doc_err_unreadable">Lelo fayela alikwazanga ukufundwa. Zama ukulikhetha futhi.</string>
+    <string name="doc_err_no_link">Lelo dokhumenti alikwazanga ukuvulwa njengamanje. Sicela uzame futhi maduze.</string>
+    <string name="doc_err_no_camera">Alukho uhlelo lwekhamera olutholakalayo kule divayisi.</string>
+    <string name="doc_err_no_viewer">Alukho uhlelo kule divayisi olungavula lolo hlobo lwefayela.</string>
+    <string name="doc_err_generic">Kukhona okungahambanga kahle ngalelo dokhumenti. Sicela uzame futhi.</string>
+
+    <string name="action_ok">Kulungile</string>
+
+    <!-- Shared states -->
+    <string name="state_retry">Zama futhi</string>
+    <string name="state_error_title">Kukhona okungahambanga kahle</string>
+    <string name="state_error_body">Sicela uzame futhi.</string>
+    <string name="state_error_reference">Inkomba: %1$s</string>
+
+    <!-- Firebase configuration -->
+    <string name="firebase_not_configured">I-Firebase ayilungiselelwe</string>
+</resources>
